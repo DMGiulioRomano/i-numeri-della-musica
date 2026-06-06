@@ -1,0 +1,126 @@
+% =====================================================================
+%  stile.sty — Pagina di stile del volume (Michela Mollia)
+%  Ricostruzione tipografica fedele della scansione.
+%
+%  Da caricare dopo \documentclass{book} con:  \usepackage{stile}
+%
+%  Scelte derivate dall'analisi della scansione:
+%   - formato pagina ~157 x 210 mm (446.4 x 595.2 pt del PDF originale);
+%   - corpo testo serif (Palatino/mathpazo), giustificato, rientro di capoverso;
+%   - testatine correnti: titolo capitolo (verso) / sezione (recto),
+%     numero di pagina nel margine esterno in basso;
+%   - titoli di capitolo in neretto "N. Titolo" con stacco verticale;
+%   - liste numerate in stile "n)";
+%   - bibliografia biblatex (biber), elenco alfabetico autore-titolo.
+% =====================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{stile}[2026/06/06 Stile volume Mollia - sistemi di intonazione]
+
+% ------------------------- Codifica e lingua -------------------------
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[italian]{babel}
+
+% ------------------------------ Font ---------------------------------
+\RequirePackage{mathpazo}            % Palatino (testo + matematica)
+\linespread{1.05}                    % interlinea leggermente aperta
+\RequirePackage[scaled=0.88]{helvet} % sans di servizio (testatine/figure)
+\RequirePackage{microtype}           % rifiniture micro-tipografiche
+
+% --------------------------- Geometria -------------------------------
+% Carta uguale all'originale scansionato (446.4 x 595.2 pt).
+\RequirePackage[
+  paperwidth  = 157.4mm,
+  paperheight = 209.9mm,
+  inner       = 22mm,
+  outer       = 17mm,
+  top         = 20mm,
+  bottom      = 20mm,
+  headsep     = 7mm,
+  footskip    = 10mm,
+]{geometry}
+
+% --------------------------- Matematica ------------------------------
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+% rapporti musicali compatti: \rapp{3}{2} -> 3:2 ; \cents{702} -> 702 cents
+\newcommand{\rapp}[2]{#1\!:\!#2}
+\newcommand{\cents}[1]{#1~cents}
+
+% ------------------------- Liste e tabelle ---------------------------
+\RequirePackage{enumitem}
+% Lista numerata in stile "n)" come nell'originale.
+\newlist{elenco}{enumerate}{1}
+\setlist[elenco]{label=\arabic*), leftmargin=*, itemsep=2pt, topsep=4pt}
+\RequirePackage{booktabs}
+\RequirePackage{array}
+
+% ----------------------------- Figure --------------------------------
+\RequirePackage{graphicx}
+\graphicspath{{immagini/}{esempi/}}
+\RequirePackage{caption}
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+
+% Esempio musicale (PDF ritagliato prodotto da LilyPond), centrato, non float.
+% #1 = nome file senza estensione (cerca <nome>.cropped.pdf in esempi/)
+\newcommand{\esmus}[1]{\par\medskip\centerline{\includegraphics{#1.cropped.pdf}}\par\medskip}
+
+% ------------------------ Testatine / piè ----------------------------
+\RequirePackage{fancyhdr}
+\RequirePackage{emptypage}           % niente testatine su pagine vuote
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\itshape\leftmark}   % verso: titolo capitolo
+\fancyhead[RO]{\small\itshape\rightmark}  % recto: titolo sezione
+\fancyfoot[LE,RO]{\small\thepage}         % numero pagina, margine esterno
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+% Stile delle pagine d'apertura capitolo
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[LE,RO]{\small\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+% --------------------- Titoli (capitolo/sezione) ---------------------
+\RequirePackage{titlesec}
+% Capitolo: "N. Titolo" in neretto, allineato a sinistra, con stacco.
+\titleformat{\chapter}[block]
+  {\normalfont\Large\bfseries}{\thechapter.}{0.6em}{}
+\titlespacing*{\chapter}{0pt}{12pt}{40pt}
+% Sezioni e sottosezioni in neretto, numerate (1.1, 1.1.1).
+\titleformat{\section}
+  {\normalfont\large\bfseries}{\thesection}{0.6em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{0pt}{12pt}{4pt}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% --------------------------- Capoversi -------------------------------
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt}
+
+% ---------------------- Glossario (voce + def.) ----------------------
+% \voce{Termine}{Definizione...}
+\newcommand{\voce}[2]{\par\noindent\textit{#1}: #2\par\smallskip}
+
+% --------------------- Firma (es. fine Introduzione) -----------------
+\newcommand{\firma}[1]{\par\bigskip\hfill\textbf{#1}\par}
+
+% --------------------------- Bibliografia ----------------------------
+\RequirePackage[backend=biber,
+                style=authortitle,
+                sorting=nyt,
+                maxbibnames=10]{biblatex}
+% Voci a rientro sporgente, senza etichette numeriche.
+\setlength{\bibhang}{1.5em}
+\setlength{\bibitemsep}{0.4\baselineskip}
+
+% --------------------- Virgolette tipografiche -----------------------
+\RequirePackage{csquotes}
+
+\endinput

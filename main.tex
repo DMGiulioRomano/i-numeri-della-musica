@@ -1,0 +1,74 @@
+% =====================================================================
+%  main.tex — Ricostruzione LaTeX del volume (Michela Mollia)
+%  Compilazione:  latexmk -pdf main.tex      (oppure: make)
+%  Richiede biber per la bibliografia.
+% =====================================================================
+\documentclass[11pt,twoside,openany]{book}
+\usepackage{stile}
+
+\addbibresource{bibliografia.bib}
+
+% --- Dati del frontespizio (dalla scansione di copertina e frontespizio) ---
+\newcommand{\Autore}{Walter Branchi}
+\newcommand{\Titolo}{I numeri della musica}
+\newcommand{\SottotitoloA}{Elementi di calcolo degli intervalli}
+\newcommand{\SottotitoloB}{e sistemi d'intonazione}
+\newcommand{\Introduttore}{Michela Mollia}
+\newcommand{\Editore}{edipan}
+
+\begin{document}
+
+% =====================================================================
+%  FRONTESPIZIO (ricostruito — dati da confermare)
+% =====================================================================
+\frontmatter
+\thispagestyle{empty}
+\begin{center}
+  \vspace*{1.2cm}
+  {\Large \Autore\par}
+  \vspace{2.4cm}
+  {\fontsize{30}{34}\selectfont \Titolo\par}
+  \vspace{0.45cm}
+  {\LARGE \SottotitoloA\par}
+  \vspace{0.18cm}
+  {\LARGE \SottotitoloB\par}
+  \vspace{2.6cm}
+  {\large\bfseries Introduzione di \Introduttore\par}
+  \vfill
+  {\large\itshape \Editore\par}
+  \vspace{1.2cm}
+\end{center}
+\clearpage
+
+% =====================================================================
+%  INDICE — spostato all'INIZIO (nell'originale era in fondo)
+% =====================================================================
+\tableofcontents
+\cleardoublepage
+
+% =====================================================================
+%  CORPO
+% =====================================================================
+\mainmatter
+
+\input{capitoli/00-introduzione}
+\input{capitoli/01-elementi-calcolo-intervalli}
+\input{capitoli/02-sistemi-intonazione}
+
+% --------------------------- Appendici -------------------------------
+\input{appendici/appendici}
+
+% --------------------------- Glossario -------------------------------
+\input{glossario}
+
+% =====================================================================
+%  BIBLIOGRAFIA
+% =====================================================================
+\backmatter
+\chapter*{Bibliografia}
+\addcontentsline{toc}{chapter}{Bibliografia}
+\markboth{Bibliografia}{Bibliografia}
+\nocite{*}                       % elenco completo (non citazioni puntuali)
+\printbibliography[heading=none]
+
+\end{document}

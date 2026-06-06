@@ -1,0 +1,120 @@
+% =====================================================================
+%  Capitolo 1 — Elementi di calcolo degli intervalli
+%  Apertura (p-05, p-06) trascritta integralmente.
+%  Sezioni 1.1-1.3.3 (da p-07 in poi): DA TRASCRIVERE.
+% =====================================================================
+\chapter{Elementi di calcolo degli intervalli}
+
+Esistono diversi modi attraverso i quali si può procedere all'investigazione
+sulla natura e calcolo degli intervalli e tra questi, da quasi 3000 anni,
+l'impiego del monocordo si è rivelato particolarmente efficace per esperimenti
+e dimostrazioni di carattere scientifico e musicale. Il monocordo, come dice il
+nome stesso, è uno strumento formato da una corda tesa tra due ponticelli su
+una cassa di risonanza e da un ulteriore ponticello mobile che viene utilizzato
+per dividere la corda in porzioni diverse a seconda dell'intervallo desiderato.
+
+L'altezza di un suono generato su un monocordo dipende dal peso per unità di
+lunghezza della corda (materiale e diametro), tensione e lunghezza. Queste
+grandezze sono alla base delle quattro leggi fondamentali riguardanti la corda
+vibrante in relazione all'altezza del suono emesso:
+
+\begin{elenco}
+  \item il numero di periodi per secondo è inversamente proporzionale alla
+        lunghezza della corda;
+  \item il numero di periodi per secondo è proporzionale alla radice quadrata
+        della tensione alla quale la corda è soggetta;
+  \item il numero di periodi per secondo varia inversamente allo spessore della
+        corda;
+  \item il numero di periodi per secondo è inversamente proporzionale alla
+        radice quadrata della densità della corda.
+\end{elenco}
+
+Per il nostro scopo terremo conto soltanto della lunghezza della corda,
+ritenendo costanti gli altri parametri. Ora, considerando la prima legge sulla
+corda vibrante, avremo che se la corda è lunga un metro e oscilla con una
+frequenza di 500 periodi al secondo, la stessa corda con il ponticello mobile
+disposto alla sua metà ($1/2$) darà una frequenza pari a
+$500 \times \frac{2}{1} = 1000$ periodi al secondo e, ancora, ridotta a $2/3$
+della lunghezza totale, darà $500 \times \frac{3}{2} = 750$ periodi al secondo,
+e così via. Nel calcolo della frequenza di un intervallo i termini del rapporto
+che la definiscono verranno posti in modo tale da avere il valore più grande al
+numeratore, mentre per determinare la lunghezza della corda vibrante il valore
+più grande si troverà al denominatore. Poniamo di avere una corda lunga un metro
+con una frequenza propria di 500~Hz: per sapere sia la frequenza relativa che il
+punto della corda dove si dovrà disporre il ponticello mobile per trovare la sua
+quinta ($3/2$) avremo:
+\[
+  500~\text{Hz} \times \tfrac{3}{2} = 750~\text{Hz}
+  \qquad
+  1~\text{m} \times \tfrac{2}{3} = 66{,}6~\text{cm}
+\]
+
+Un \emph{intervallo} tra due frequenze viene definito dal rapporto, o dal
+quoziente, tra le due frequenze che lo formano. Per esempio, l'intervallo o la
+distanza tra una frequenza di 500~Hz e una di 800~Hz è espresso dal rapporto
+$8/5$ oppure dal suo quoziente $1{,}6$.
+
+Nel calcolo teorico degli intervalli le altezze reali sono immaginarie: una nota
+arbitraria, normalmente DO, viene scelta come punto di partenza e ad essa è
+assegnato un valore di frequenza $1$. In pratica il calcolo degli intervalli
+viene effettuato considerando essenzialmente tre intervalli elementari:
+\[
+  \text{ottava} = O \qquad
+  \text{quinta} = Q \qquad
+  \text{terza maggiore} = T
+\]
+
+Esperimenti iniziati da Pitagora da Samo già nel VI secolo a.C. fornirono le
+seguenti regole:
+
+\begin{elenco}
+  \item la frequenza di un suono è $n$, quella dell'ottava è $2n$, della quinta
+        $\frac{3}{2}n$ e della terza maggiore $\frac{5}{4}n$ (è da notare che
+        questi intervalli sono i primi tre componenti con una propria identità
+        della serie degli armonici: $2/1$ ottava, $3/1$ dodicesima-quinta,
+        $5/1$ diciassettesima-terza maggiore);
+  \item gli intervalli si \emph{addizionano} moltiplicando le loro rispettive
+        frazioni. Quindi, per esempio, l'intervallo di dodicesima (quinta
+        all'ottava superiore) è uguale a
+        $Q + O = \frac{3}{2} \times \frac{2}{1} = \frac{3}{1}$;
+        l'intervallo di settima maggiore è uguale a
+        $Q + T = \frac{3}{2} \times \frac{5}{4} = \frac{15}{8}$;
+  \item un intervallo si \emph{sottrae} moltiplicando la rispettiva frazione
+        invertita. Per esempio, l'intervallo di quarta è uguale a
+        $O - Q = \frac{2}{1} \times \frac{2}{3} = \frac{4}{3}$ e l'intervallo di
+        terza minore è uguale a
+        $Q - T = \frac{3}{2} \times \frac{4}{5} = \frac{6}{5}$.
+\end{elenco}
+
+Nel calcolo degli intervalli complessi si può procedere ad una semplificazione
+che consiste nel non considerare l'intervallo nell'ambito del rapporto $2/1$,
+trascurando cioè il fattore 2. Così facendo la quinta diviene semplicemente $3$
+e la terza maggiore $5$. Naturalmente, con questo procedimento, le ottave
+risultanti non sono corrette nel senso della posizione dell'intervallo
+nell'ambito di una stessa ottava. Comunque questa piccola difficoltà può essere
+facilmente risolta moltiplicando il risultato ottenuto per una potenza di 2
+($2, 4, 8, \tfrac{1}{2}, \tfrac{1}{4}, \tfrac{1}{8}$ ecc.).
+
+% La pipeline LilyPond e' verificata (vedi esempi/es-tetractys.ly). Gli esempi
+% musicali reali verranno inseriti con \esmus{...} nei punti corretti durante
+% la trascrizione delle sezioni seguenti.
+
+% [...] SEZIONI 1.1-1.3.3 DA TRASCRIVERE (scansione p-07 in poi) ...]
+
+\section{Intervalli complementari}
+% TODO trascrivere (scansione p-07 ss.)
+
+\section{Intervalli logaritmici}
+% TODO trascrivere
+
+\section{Conversione rapporto/cents/rapporto}
+% TODO trascrivere
+
+\subsection{Conversione da rapporto in cents}
+% TODO trascrivere
+
+\subsection{Conversione da cents a numero decimale}
+% TODO trascrivere
+
+\subsection{Conversione da numero decimale in rapporto}
+% TODO trascrivere
