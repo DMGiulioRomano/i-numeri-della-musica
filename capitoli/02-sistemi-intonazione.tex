@@ -543,7 +543,168 @@ utilizzati per la costruzione di alcuni fondamentali sistemi di intonazione non
 temperati.
 
 \section{Sistema pitagorico}
-% TODO trascrivere
+
+Il primo sistema che verrà preso in esame è quello detto pitagorico. Esso è
+strutturato esclusivamente su intervalli acusticamente puri derivati dai fattori
+primi 1, 2 e 3 che presso i Greci erano considerati i \emph{corpi dell'armonia}.
+Come sappiamo 1 rappresenta il fondamentale, 2 l'ottava e 3 la quinta ($3/1$
+riportato nell'ottava $3/2$), ma sul fattore 3 si può aggiungere qualche
+considerazione. Per ottenere l'ottava la parte di corda vibrante considerata è
+la metà e per la quinta la corda viene divisa in tre parti, ma mentre nel caso
+dell'ottava il reciproco di $1/2$ è ugualmente $1/2$, nel secondo caso avremo da
+una parte della corda $1/3$ e dall'altra il suo reciproco cioè $2/3$.
+
+Questo nuovo intervallo (che è un'ottava più basso di $1/3$) forma, rispetto
+all'ottava, un intervallo di quarta ($2/3$), che riportato nello spazio di
+un'ottava diviene $4/3$. Quindi, dai fattori primi 1, 2 e 3 si sono ricavati i
+quattro intervalli basilari del sistema pitagorico:
+\[
+  \underset{\textstyle 1/1}{\text{DO}} \qquad
+  \underset{\textstyle 4/3}{\text{FA}} \qquad
+  \underset{\textstyle 3/2}{\text{SOL}} \qquad
+  \underset{\textstyle 2/1}{\text{DO}}
+\]
+
+Differentemente da quanto visto in precedenza per la costruzione del sistema di
+intervalli legato alla serie degli armonici, nel sistema pitagorico i quattro
+intervalli basilari vengono disposti a formare una serie di quinte consecutive
+che, riportate nello spazio di un'ottava, daranno inizio ad una serie così
+composta:
+
+\begin{center}\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llll}
+  $\tfrac{2}{3}=$ Fa  & $\tfrac{1}{1}=$ Do & $\tfrac{3}{2}=$ Sol
+    & $\tfrac{3^2}{2^3}=\tfrac{9}{8}=$ Re \\[2pt]
+  $\tfrac{3^3}{2^4}=\tfrac{27}{16}=$ La & $\tfrac{3^4}{2^6}=\tfrac{81}{64}=$ Mi
+    & $\tfrac{3^5}{2^7}=\tfrac{243}{128}=$ Si
+    & $\tfrac{3^6}{2^9}=\tfrac{729}{512}=$ Fa$\sharp$ \\[2pt]
+  $\tfrac{3^7}{2^{10}}=\tfrac{2187}{1024}=$ Do$\sharp$
+    & $\tfrac{3^8}{2^{12}}=\tfrac{6561}{4096}=$ Sol$\sharp$
+    & $\tfrac{3^9}{2^{14}}=\tfrac{19683}{16384}=$ Re$\sharp$
+    & $\tfrac{3^{10}}{2^{15}}=\tfrac{59049}{32768}=$ La$\sharp$ \\[2pt]
+  $\tfrac{3^{11}}{2^{17}}=\tfrac{177147}{131072}=$ Mi$\sharp$
+    & $\tfrac{3^{12}}{2^{19}}=\tfrac{531441}{524288}=$ Si$\sharp$
+    & e così via & \\
+\end{tabular}}
+\end{center}
+
+Disponendo in ordine crescente il rapporto della quinta inferiore (quarta) e
+delle prime cinque quinte superiori si otterrà la scala diatonica pitagorica:
+
+\begin{center}\small
+\begin{tabular}{l*{8}{c}}
+   & DO & RE & MI & FA & SOL & LA & SI & DO \\
+   & $\tfrac{1}{1}$ & $\tfrac{9}{8}$ & $\tfrac{81}{64}$ & $\tfrac{4}{3}$
+   & $\tfrac{3}{2}$ & $\tfrac{27}{16}$ & $\tfrac{243}{128}$ & $\tfrac{2}{1}$ \\
+\end{tabular}
+\end{center}
+
+che per $1 = 100$~Hz darà i seguenti valori frequenziali:
+\[
+  100,\ 112{,}5,\ 126{,}5,\ 133{,}3,\ 150,\ 168{,}7,\ 189{,}8,\ 200~\text{(Hz)}
+\]
+In questo modo abbiamo ottenuto i gradi della scala, mentre se vogliamo
+conoscere l'intervallo che esiste tra ciascun grado dovremo moltiplicare le
+rispettive frazioni invertendo sia la seconda frazione che il risultato così
+ottenuto. Per esempio l'intervallo tra RE e MI sarà:
+\[
+  \frac{9}{8} \times \frac{64}{81} = \frac{576}{648} = \frac{8}{9} = \frac{9}{8}
+\]
+oppure tra MI e FA:
+\[
+  \frac{81}{64} \times \frac{3}{4} = \frac{243}{256} = \frac{256}{243}
+\]
+Pertanto gli intervalli tra i diversi gradi della scala diatonica di Pitagora
+sono:
+
+\begin{center}\small
+\begin{tabular}{*{8}{c}}
+  DO & RE & MI & FA & SOL & LA & SI & DO \\
+  $\tfrac{9}{8}$ & $\tfrac{9}{8}$ & $\tfrac{256}{243}$ & $\tfrac{9}{8}$
+  & $\tfrac{9}{8}$ & $\tfrac{9}{8}$ & $\tfrac{256}{243}$ & \\
+\end{tabular}
+\end{center}
+
+Il tono intero nella scala pitagorica è leggermente più grande di quello
+temperato ($203{,}9$ cents anziché $200$) mentre il semitono è considerabilmente
+più piccolo ($90{,}2$ cents anziché $100$).
+
+Naturalmente continuando nella serie delle quinte oltre quelle già impiegate per
+la costruzione della scala diatonica si può arrivare ad ottenere una scala
+cromatica. L'ottava la $12^{\text{a}}$ quinta della serie SI$\sharp$ è
+leggermente differente dal fondamentale DO poiché essa è di un comma pitagorico
+o ditonico più alta ($3^{12}/2^{19} = 531441/524288$ o $23{,}5$ cents). Questo
+scarto, che si ritrova evidentemente nella differenza tra 12 quinte e 7 ottave
+consecutive, fa sì che la serie delle quinte può essere rappresentata più
+correttamente come una spirale dove ogni $12^{\text{a}}$ quinta lo scarto
+aumenta di un comma.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \draw[thick,domain=0:1080,smooth,samples=300,variable=\t]
+      plot ({0.00135*\t*cos(\t)},{0.00135*\t*sin(\t)});
+  \end{tikzpicture}
+\end{figure}
+
+Comunque una ottima approssimazione con i fondamentali la si ottiene alla
+$53^{\text{a}}$ quinta dove la differenza è soltanto di $3{,}4$ cents. La quasi
+totale identità dei valori tra la $53^{\text{a}}$ quinta ($54^{\text{a}}$
+altezza) e il fondamentale ha portato il sistema di intonazione pitagorico,
+esteso a 53 parti ineguali nell'ottava, ad essere uno dei migliori sistemi entro
+i limiti della praticabilità.
+
+Questo sistema è stato proposto per la prima volta in Europa dal matematico e
+astronomo danese Nicolas Mercator nel XVII secolo. Egli lo trovò menzionato
+negli scritti del teorico musicale cinese King-Fang (secondo secolo a.C.). La
+struttura intervallare di questo sistema, formato esclusivamente da quinte, è
+ottenuta moltiplicando successivamente per 53 volte l'intervallo $3/2$ e
+riportando tutti i quozienti nell'ambito dell'ottava.
+
+\begin{table}[htbp]
+  \centering\footnotesize
+  \caption*{Struttura intervallare del sistema pitagorico
+    (53 intervalli nell'ottava)}
+  \begin{tabular}{r r r @{\qquad} r r r}
+    \toprule
+    & Coefficiente & Cents & & Coefficiente & Cents \\
+    \midrule
+    1) & 1 & 0 & 28) & 1,4238 & 611,7300 \\
+    2) & 1,0136 & 23,4600 & 29) & 1,4433 & 635,1900 \\
+    3) & 1,0275 & 46,9200 & 30) & 1,4629 & 658,6500 \\
+    4) & 1,0415 & 70,3800 & 31) & 1,4829 & 682,1100 \\
+    5) & 1,0557 & 93,8400 & 32) & 1,5000 & 701,9550 \\
+    6) & 1,0679 & 113,6850 & 33) & 1,5205 & 725,4150 \\
+    7) & 1,0824 & 137,1450 & 34) & 1,5412 & 748,8750 \\
+    8) & 1,0972 & 160,6050 & 35) & 1,5622 & 772,3350 \\
+    9) & 1,1122 & 184,0650 & 36) & 1,5836 & 795,7950 \\
+    10) & 1,1250 & 203,9100 & 37) & 1,6018 & 815,6400 \\
+    11) & 1,1403 & 227,3700 & 38) & 1,6237 & 839,1000 \\
+    12) & 1,1559 & 250,8300 & 39) & 1,6458 & 862,5600 \\
+    13) & 1,1717 & 274,2900 & 40) & 1,6683 & 886,0200 \\
+    14) & 1,1877 & 297,7500 & 41) & 1,6875 & 905,8650 \\
+    15) & 1,2014 & 317,5950 & 42) & 1,7105 & 929,3250 \\
+    16) & 1,2177 & 341,0550 & 43) & 1,7339 & 952,7850 \\
+    17) & 1,2344 & 364,5150 & 44) & 1,7575 & 976,2450 \\
+    18) & 1,2512 & 387,9750 & 45) & 1,7815 & 999,7050 \\
+    19) & 1,2656 & 407,8200 & 46) & 1,8020 & 1019,5500 \\
+    20) & 1,2829 & 431,2800 & 47) & 1,8266 & 1043,0100 \\
+    21) & 1,3004 & 454,7400 & 48) & 1,8515 & 1066,4700 \\
+    22) & 1,3181 & 478,2000 & 49) & 1,8768 & 1089,9300 \\
+    23) & 1,3361 & 501,6600 & 50) & 1,8984 & 1109,7750 \\
+    24) & 1,3515 & 521,5050 & 51) & 1,9243 & 1133,2350 \\
+    25) & 1,3700 & 544,9650 & 52) & 1,9506 & 1156,6950 \\
+    26) & 1,3887 & 568,4250 & 53) & 1,9772 & 1180,1550 \\
+    27) & 1,4076 & 591,8850 & 54) & 2,0042 & 1203,6150 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% La versione "complementata secondo Walter Link Jr" (tabella con colonna
+% Rapporto e valori a 8 decimali, scan p-33/p-34) introduce correzioni di uno
+% schisma su alcuni gradi e non è riproducibile in modo affidabile dalla
+% scansione degradata: TODO trascrizione/verifica.
 
 \section{Tetracordo, generi e sistemi nella musica greca}
 % TODO trascrivere
