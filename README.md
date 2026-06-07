@@ -56,11 +56,16 @@ Fatto: frontespizio, Introduzione integrale, Indice in apertura, **Cap. 1
 completo** (aritmetica degli intervalli, comma/schisma, §1.1 Intervalli
 complementari, §1.2 Intervalli logaritmici con diagramma cents/frequenza in
 TikZ, §1.3 Conversione rapporto/cents/rapporto e relative sottosezioni),
-bibliografia, pipeline esempi musicali.
+bibliografia, pipeline esempi musicali. Nel **Cap. 2** sono completi §2.1–§2.4
+(Sistema pitagorico) e **§2.5 Tetracordo, generi e sistemi nella musica greca**
+(generi diatonico/cromatico/enarmonico con diagrammi TikZ, limma/apotome/comma
+pitagorico, sistema perfetto minore/maggiore/immutabile, nomi delle corde
+della Lira, specie di ottava).
 
-Da fare: Cap. 2 §2.1–§2.8 (con esempi su pentagramma e il diagramma circolare),
-Appendici, completamento Glossario, rifinitura bibliografia. I punti aperti
-sono marcati con `% TODO` nei sorgenti.
+Da fare: Cap. 2 §2.6–§2.8 (Sistema naturale, Oltre il fattore 5, Altra
+possibilità di organizzazione degli intervalli — con esempi su pentagramma e il
+diagramma circolare), Appendici, completamento Glossario, rifinitura
+bibliografia. I punti aperti sono marcati con `% TODO` nei sorgenti.
 
 ## Note
 

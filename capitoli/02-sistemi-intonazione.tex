@@ -707,20 +707,425 @@ riportando tutti i quozienti nell'ambito dell'ottava.
 % scansione degradata: TODO trascrizione/verifica.
 
 \section{Tetracordo, generi e sistemi nella musica greca}
-% TODO trascrivere
+
+Come abbiamo avuto modo di vedere, i quattro intervalli basilari del sistema
+pitagorico dividono l'ottava in due quarte (Do--Fa e Sol--Do) che nella teoria
+musicale greca avevano il nome di \emph{tetracordi}. Come dice la parola
+stessa, ciascuno di essi era formato da quattro differenti altezze. I
+tetracordi potevano essere collegati insieme in modo \emph{congiunto}, quando
+l'intervallo di quarta discendente si identificava con il \emph{fondamentale}
+del tetracordo successivo (la nota più alta del tetracordo veniva denominata
+\emph{fondamentale}), oppure \emph{disgiunto} quando tra di essi c'era
+l'intervallo di un tono. Un tetracordo, pensato sempre in senso discendente, è
+caratterizzato da un intervallo di quarta in relazione fissa che lo delimita e
+da altri due intervalli in relazione variabile. Nel collegamento congiunto la
+nota estrema o più bassa di un tetracordo diviene la fondamentale del
+tetracordo successivo (la struttura intervallare degli esempi è sempre riferita
+al \emph{genus} diatonico):
+
+\begin{center}\small
+\begin{tabular}{l}
+re do si$\flat$ la \\
+\hspace{2.2em} la sol fa mi \\
+\hspace{4.4em} mi re do si \\
+\hspace{6.6em} si la sol fa$\sharp$ \\
+\end{tabular}
+\end{center}
+
+In un sistema di più tetracordi ci sono tante fondamentali quanti sono i
+tetracordi che lo formano. Con questo si vuole sottolineare che in un sistema
+di tetracordi non esiste un'unica fondamentale con funzione di tonica.
+Quando il secondo tetracordo inizia alla distanza di un tono dal precedente si
+ha un tipo di collegamento \emph{disgiunto}:
+
+\begin{center}\small
+\begin{tabular}{l}
+fa$\sharp$ mi re do$\sharp$ \\
+\hspace{2.2em} si la sol fa$\sharp$ \\
+\hspace{4.4em} mi re do si \\
+\hspace{6.6em} la sol fa mi \\
+\hspace{8.8em} re do si$\flat$ la \\
+\end{tabular}
+\end{center}
+
+Un terzo tipo di collegamento è tuttavia possibile dalla combinazione alternata
+di congiunto e disgiunto:
+
+\begin{center}\small
+\begin{tabular}{l}
+mi re do si \\
+\hspace{2.2em} la sol fa mi \\
+\hspace{4.4em} mi re do si \\
+\hspace{6.6em} la sol fa mi \\
+\hspace{8.8em} mi re do si \\
+\end{tabular}
+\end{center}
+
+Questi tipi di collegamento sono alla base della formazione dei diversi
+\emph{sistemi} della musica greca. Il collegamento tra più tetracordi veniva
+designato con il termine \emph{Harmonia}. Esso, oltre che collegamento,
+connessione e giuntura, indicava anche la disposizione degli intervalli,
+l'altezza del suono, l'andamento della melodia, il colore, l'intensità ecc.
 
 \subsection{Generi}
-% TODO trascrivere
+
+Le diverse posizioni che i due intervalli variabili assumono all'interno del
+tetracordo determinano i tre \emph{genera}: diatonico, cromatico ed
+enarmonico. Conoscere la struttura intervallare dei tre \emph{genera}, e cioè
+l'esatto valore di ogni intervallo variabile, è argomento assai oscuro e
+dibattuto; tuttavia per il nostro studio ci rifaremo al \emph{De institutione
+musica} di Severino Boezio, dove l'interpretazione del filosofo distingue in
+modo molto chiaro le relazioni tra gli intervalli variabili caratteristici di
+ogni \emph{genus}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    x=0.85cm, y=1cm,
+    nota/.style={font=\small},
+    val/.style={font=\scriptsize},
+    frz/.style={font=\small}
+  ]
+  \node[nota] at (0,1.5)     {Néte};
+  \node[nota] at (0,1.1)     {hyperboléon};
+  \node[val]  at (0,0.6)     {2304};
+  \node[nota] at (4.09,1.3)  {Paranéte};
+  \node[val]  at (4.09,0.6)  {2592};
+  \node[nota] at (8.19,1.3)  {Trìte};
+  \node[val]  at (8.19,0.6)  {2916};
+  \node[nota] at (10,1.3)    {Néte};
+  \node[val]  at (10,0.6)    {3072};
+  \draw[very thick] (0,0) -- (10,0);
+  \foreach \x in {0,4.09,8.19,10}{\draw[very thick] (\x,-0.12) -- (\x,0.12);}
+  \node[frz] at (2.05,-0.45) {$\tfrac{9}{8}$};
+  \node[frz] at (6.14,-0.45) {$\tfrac{9}{8}$};
+  \node[frz] at (9.10,-0.45) {$\tfrac{256}{243}$};
+  \draw[thick] (0,-1.15) -- (8.19,-1.15);
+  \foreach \x in {0,8.19}{\draw[thick] (\x,-1.27) -- (\x,-1.03);}
+  \node[frz] at (4.09,-1.55) {$\tfrac{81}{64}$};
+  \draw[thick] (0,-2.15) -- (10,-2.15);
+  \foreach \x in {0,10}{\draw[thick] (\x,-2.27) -- (\x,-2.03);}
+  \node[frz] at (5,-2.55) {$\tfrac{4}{3}$};
+\end{tikzpicture}
+
+\textit{Genus diatonico}
+
+\footnotesize
+$\tfrac{9}{8} = 203{,}9$~cents \quad
+$\tfrac{256}{243} = 90{,}2$~cents \quad
+$\tfrac{81}{64} = 407{,}8$~cents \quad
+$\tfrac{4}{3} = 498$~cents
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    x=0.85cm, y=1cm,
+    nota/.style={font=\small},
+    val/.style={font=\scriptsize},
+    frz/.style={font=\small}
+  ]
+  \node[nota] at (0,1.5)     {Néte};
+  \node[nota] at (0,1.1)     {hyperboléon};
+  \node[val]  at (0,0.6)     {2304};
+  \node[nota] at (5.97,1.3)  {Paranéte};
+  \node[val]  at (5.97,0.6)  {2736};
+  \node[nota] at (8.19,1.3)  {Trìte};
+  \node[val]  at (8.19,0.6)  {2916};
+  \node[nota] at (10,1.3)    {Néte};
+  \node[val]  at (10,0.6)    {3072};
+  \draw[very thick] (0,0) -- (10,0);
+  \foreach \x in {0,5.97,8.19,10}{\draw[very thick] (\x,-0.12) -- (\x,0.12);}
+  \node[frz] at (2.99,-0.45) {$\tfrac{19}{16}$};
+  \node[frz] at (7.08,-0.45) {$\tfrac{81}{76}$};
+  \node[frz] at (9.10,-0.45) {$\tfrac{256}{243}$};
+  \draw[thick] (0,-1.15) -- (8.19,-1.15);
+  \foreach \x in {0,8.19}{\draw[thick] (\x,-1.27) -- (\x,-1.03);}
+  \node[frz] at (4.09,-1.55) {$\tfrac{81}{64}$};
+  \draw[thick] (0,-2.15) -- (10,-2.15);
+  \foreach \x in {0,10}{\draw[thick] (\x,-2.27) -- (\x,-2.03);}
+  \node[frz] at (5,-2.55) {$\tfrac{4}{3}$};
+\end{tikzpicture}
+
+\textit{Genus cromatico}
+
+\footnotesize
+$\tfrac{19}{16} = 297{,}5$~cents \quad
+$\tfrac{81}{76} = 110{,}3$~cents \quad
+$\tfrac{256}{243} = 90{,}2$~cents \quad
+$\tfrac{81}{64} = 407{,}8$~cents \quad
+$\tfrac{4}{3} = 498$~cents
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    x=0.85cm, y=1cm,
+    nota/.style={font=\small},
+    val/.style={font=\scriptsize},
+    frz/.style={font=\small}
+  ]
+  \node[nota] at (0,1.5)     {Néte};
+  \node[nota] at (0,1.1)     {hyperboléon};
+  \node[val]  at (0,0.6)     {2304};
+  \node[nota] at (8.19,1.3)  {Paranéte};
+  \node[val]  at (8.19,0.6)  {2916};
+  \node[nota] at (9.11,2.3)  {Trìte};
+  \node[val]  at (9.11,1.85) {2994};
+  \node[nota] at (10,1.3)    {Néte};
+  \node[val]  at (10,0.6)    {3072};
+  \draw[very thick] (0,0) -- (10,0);
+  \foreach \x in {0,8.19,9.11,10}{\draw[very thick] (\x,-0.12) -- (\x,0.12);}
+  \node[frz] at (4.09,-0.45) {$\tfrac{81}{64}$};
+  \node[frz] at (8.65,-0.45) {$\tfrac{499}{486}$};
+  \node[frz] at (9.55,-0.7)  {$\tfrac{512}{499}$};
+  \draw[thick] (0,-1.15) -- (9.11,-1.15);
+  \foreach \x in {0,9.11}{\draw[thick] (\x,-1.27) -- (\x,-1.03);}
+  \node[frz] at (4.55,-1.55) {$\tfrac{499}{384}$};
+  \draw[thick] (0,-2.15) -- (10,-2.15);
+  \foreach \x in {0,10}{\draw[thick] (\x,-2.27) -- (\x,-2.03);}
+  \node[frz] at (5,-2.55) {$\tfrac{4}{3}$};
+\end{tikzpicture}
+
+\textit{Genus enarmonico}
+
+\footnotesize
+$\tfrac{81}{64} = 407{,}8$~cents \quad
+$\tfrac{499}{486} = 45{,}7$~cents \quad
+$\tfrac{512}{499} = 44{,}5$~cents \quad
+$\tfrac{499}{384} = 453{,}5$~cents \quad
+$\tfrac{4}{3} = 498$~cents
+\end{figure}
+
+Si noti come il semitono diatonico venisse chiamato \emph{limma} (cioè
+``avanzo'', ``resto'') in quanto si otteneva sottraendo due toni interi
+dall'intervallo di quarta:
+\[
+  \frac{4}{3} : \left(\frac{9}{8}\right)^{2}
+  = \frac{4}{3} \times \frac{64}{81}
+  = \frac{256}{243} = 90{,}2~\text{cents}
+\]
+La differenza tra un tono intero e questo semitono (limma o diesis) era
+chiamata \emph{apotome}, il cui valore corrisponde a:
+\[
+  \frac{9}{8} : \frac{256}{243}
+  = \frac{9}{8} \times \frac{243}{256}
+  = \frac{2187}{2048} = 113{,}7~\text{cents}
+\]
+L'intervallo di apotome è dunque leggermente più grande del limma o diesis; la
+loro differenza --- che equivale anche alla differenza tra un tono intero e la
+somma di due limma --- dà il \emph{comma pitagorico}:
+\[
+  \frac{3^{7}}{2^{11}} : \frac{2^{8}}{3^{5}}
+  = \frac{3^{7}}{2^{11}} \times \frac{3^{5}}{2^{8}}
+  = \frac{3^{12}}{2^{19}}
+  = \frac{531441}{524288} = 23{,}5~\text{cents}
+\]
+
+\begin{figure}[htbp]
+\centering
+% Lo schema originale (scan p. 43) sovrapponeva al tetracordo Do-Re-Mib-Mi-Fa
+% altre due righe di suddivisione siglate A/D/C (apotome, diesis o limma,
+% comma pitagorico): la distorsione della scansione non consente di
+% ricostruirne con sicurezza le esatte posizioni, per cui qui si riporta la
+% struttura essenziale tono-tono-semitono.
+\begin{tikzpicture}[
+    x=2.4cm, y=1cm,
+    nota/.style={font=\small},
+    alt/.style={font=\scriptsize},
+    iv/.style={font=\footnotesize\itshape}
+  ]
+  \draw[thick,dash pattern=on 3pt off 2pt] (0,1) -- (4,1);
+  \foreach \x in {0,1,2,3,4}{\draw (\x,0.88) -- (\x,1.12);}
+  \node[iv] at (0.5,1.35) {tono};
+  \node[iv] at (1.5,1.35) {tono};
+  \node[iv] at (2.5,1.35) {semitono};
+  \node[iv] at (3.5,1.35) {};
+  \node[font=\small\itshape] at (1.5,1.7) {Tetracordo};
+  \foreach \x/\n/\a in {0/{Do}/{(sol)}, 1/{Re}/{(la)}, 2/{Mi$\flat$}/{(si$\flat$)},
+                        3/{Mi}/{(si)}, 4/{Fa}/{(do)}}{
+    \node[nota] at (\x,0.55) {\n};
+    \node[alt]  at (\x,0.3)  {\a};
+  }
+\end{tikzpicture}
+\end{figure}
 
 \subsection{Sistema perfetto}
-% TODO trascrivere
+
+Il minimo sistema nella musica greca è rappresentato dal tetracordo, ma
+sistemi più ampi possono essere formati dall'associazione di più tetracordi.
+Il \emph{sistema perfetto minore} (\emph{systema téleion élatton}) è
+costituito da tre tetracordi congiunti più una nota aggiunta al grave
+(\emph{proslambanómenos}); il \emph{sistema perfetto maggiore} (\emph{systema
+téleion méizon}) da quattro tetracordi congiunti a due a due con un intervallo
+di un tono di disgiunzione al centro, più una nota aggiunta al grave
+(\emph{proslambanómenos}); il \emph{sistema perfetto immutabile} (\emph{systema
+téleion ametábolon}) dalla combinazione dei due sistemi perfetti minore e
+maggiore in un'unica successione.
+
+Con il sistema perfetto si era tentato di organizzare unitariamente lo spazio
+musicale intorno ad un centro \emph{la}, riferendosi ad un'ottava \emph{mi--mi}
+di tipo dorico.
+
+\begin{figure}[htbp]
+\centering
+% Ricostruzione schematica (scan pp. 44-45): il diagramma originale disponeva
+% le note in colonna con i nomi greci delle corde a fianco e le parentesi dei
+% tetracordi ai margini; qui se ne riproduce la struttura in forma di scala
+% verticale, con i due rami (Maggiore/disgiunto e Minore/congiunto) che si
+% dipartono dalla mése. Le parentesi che delimitano i tetracordi del tronco
+% comune (Hypatôn, Mesôn) sono mantenute; per i tre tetracordi dei due rami
+% l'appartenenza è già resa esplicita dal nome composto di ciascuna corda
+% (Synemménon, Diezeugménon, Hyperboléon), per cui qui si omettono ulteriori
+% parentesi onde evitare sovrapposizioni nella resa grafica.
+\resizebox{0.92\textwidth}{!}{%
+\begin{tikzpicture}[
+    x=1cm, y=0.55cm,
+    nota/.style={font=\small},
+    greco/.style={font=\scriptsize\itshape},
+    iv/.style={font=\tiny}
+  ]
+  % --- tronco comune: dal proslambanòmenos alla mése ---
+  \draw[thick] (0,0) -- (0,7);
+  \foreach \y/\n/\g in {%
+      0/{La}/{Proslambanómenos},
+      1/{Si}/{Hypàte Hypatôn},
+      2/{Do}/{Parhypàte Hypatôn},
+      3/{Re}/{Lìchanos Hypatôn},
+      4/{Mi}/{Hypàte Mesôn},
+      5/{Fa}/{Parhypàte Mesôn},
+      6/{Sol}/{Lìchanos Mesôn},
+      7/{La}/{Mése}}{
+    \draw (-0.1,\y) -- (0.1,\y);
+    \node[nota,anchor=east]  at (-0.2,\y)  {\n};
+    \node[greco,anchor=west] at (0.25,\y)  {\g};
+  }
+  \draw (-0.85,0) -- (-1,0) -- (-1,3) -- (-0.85,3);
+  \node[rotate=90,font=\scriptsize\itshape] at (-1.25,1.5) {Hypatôn};
+  \draw (-0.85,4) -- (-1,4) -- (-1,7) -- (-0.85,7);
+  \node[rotate=90,font=\scriptsize\itshape] at (-1.25,5.5) {Mesôn};
+  % --- ramo disgiunto: sistema perfetto maggiore ---
+  \draw[thick] (2.4,7.4) -- (2.4,14);
+  \draw[dashed] (0,7.3) -- (2.4,7.4);
+  \node[iv,anchor=south] at (0.55,7.65) {tono di disgiunzione};
+  \foreach \y/\n/\g in {%
+      8/{Si}/{Paramése},
+      9/{Do}/{Trite Diezeugménon},
+     10/{Re}/{Paranéte Diezeugménon},
+     11/{Mi}/{Néte Diezeugménon},
+     12/{Fa}/{Trite Hyperboléon},
+     13/{Sol}/{Paranéte Hyperboléon},
+     14/{La}/{Néte Hyperboléon}}{
+    \draw (2.3,\y) -- (2.5,\y);
+    \node[nota,anchor=east]  at (2.2,\y)  {\n};
+    \node[greco,anchor=west] at (2.55,\y) {\g};
+  }
+  % --- ramo congiunto: sistema perfetto minore (tetracordo synemménon) ---
+  \draw[thick] (-2.4,7.4) -- (-2.4,10);
+  \draw[dashed] (0,7.3) -- (-2.4,7.4);
+  \foreach \y/\n/\g in {%
+      8/{Si$\flat$}/{Trite Synemménon},
+      9/{Do}/{Paranéte Synemménon},
+     10/{Re}/{Néte Synemménon}}{
+    \draw (-2.5,\y) -- (-2.3,\y);
+    \node[greco,anchor=east] at (-2.55,\y) {\g};
+    \node[nota,anchor=west]  at (-2.25,\y) {\n};
+  }
+\end{tikzpicture}}
+
+\textit{Sistema perfetto immutabile, comprendente i sistemi perfetto maggiore
+e minore}: dalla \emph{mése} si dipartono il collegamento \emph{disgiunto}
+(verso il tetracordo \emph{diezeugménon} e oltre, sistema perfetto maggiore) e
+quello \emph{congiunto} (tetracordo \emph{synemménon}, sistema perfetto
+minore).
+\end{figure}
+
+Il fatto che il nome delle singole note, nei vari collegamenti di tetracordi,
+sia relato al nome delle corde della \emph{Kithara} o della \emph{Lira}
+farebbe pensare al sistema perfetto non tanto come schema teorico, ma
+piuttosto come ordinamento di tipo pratico-esecutivo.
 
 \subsection{Nome delle corde della \emph{Lira} rispetto alle note nel
             collegamento di due tetracordi}
-% TODO trascrivere
+
+Quando i tetracordi sono congiunti abbiamo:
+
+\begin{center}
+$\left.\begin{array}{l} \text{re} \\ \text{do} \\ \text{si$\flat$} \end{array}\right\}$
+\quad
+\begin{tabular}{l}
+  Néte (la corda più in basso, in realtà il suono più acuto) \\
+  Paranéte (successiva alla Néte) \\
+  Trite (terza corda) \\
+\end{tabular}
+
+\medskip
+$\left.\begin{array}{l} \text{la} \\ \text{sol} \\ \text{fa} \\ \text{mi} \end{array}\right\}$
+\quad
+\begin{tabular}{l}
+  Mése (corda media) \\
+  Lìchanos (corda del primo dito) \\
+  Parhypàte (successiva alla più alta) \\
+  Hypàte (la corda più in alto, in realtà il suono più grave) \\
+\end{tabular}
+\end{center}
+
+Nel collegamento tra due tetracordi disgiunti:
+
+\begin{center}
+$\left.\begin{array}{l} \text{mi}' \\ \text{re}' \\ \text{do}' \\ \text{si} \end{array}\right\}$
+\quad
+\begin{tabular}{l}
+  Néte \\
+  Paranéte \\
+  Trite \\
+  Paramése (successiva alla Mése) \\
+\end{tabular}
+
+\medskip
+$\left.\begin{array}{l} \text{la} \\ \text{sol} \\ \text{fa} \\ \text{mi} \end{array}\right\}$
+\quad
+\begin{tabular}{l}
+  Mése \\
+  Lìchanos \\
+  Parhypàte \\
+  Hypàte \\
+\end{tabular}
+\end{center}
+
+Con \emph{corda più in alto} e \emph{più in basso} ci si riferiva
+probabilmente alla posizione delle corde sullo strumento rispetto alla
+posizione di esecuzione.
 
 \subsection{Specie di ottava}
-% TODO trascrivere
+
+Rispetto al sistema perfetto maggiore si possono formare una serie di
+strutture intervallari nell'ambito di un'ottava chiamate \emph{specie di
+ottava}. Esse sono sette ed iniziano ciascuna un tono o un semitono più basso
+a partire dall'ottava più acuta la'--la, e procedono dall'acuto al grave.
+
+\begin{center}\small
+\begin{tabular}{c c l @{\qquad\qquad} *{7}{c}}
+  \multicolumn{3}{l}{\textbf{Specie di ottava}}
+    & \multicolumn{7}{l}{\textbf{Struttura intervallare}} \\[4pt]
+  la$'$ & la & Ipodorica  & T & T & S & T & T & S & T \\
+  sol$'$ & sol & Ipofrigia & T & S & T & T & S & T & T \\
+  fa$'$ & fa & Ipolidia   & S & T & T & S & T & T & T \\
+  mi$'$ & mi & Dorica     & T & T & S & T & T & T & S \\
+  re$'$ & re & Frigia     & T & S & T & T & T & S & T \\
+  do$'$ & do & Lidia      & S & T & T & T & S & T & T \\
+  si$'$ & Si & Misolidia  & T & T & T & S & T & T & S \\
+\end{tabular}
+\end{center}
+
+Le differenti strutture intervallari conferiscono ad ognuna delle specie un
+proprio carattere musicale, mentre il nome di ciascuna di esse deriva
+probabilmente da quello di alcune tribù, come appunto gli Eoli, gli Iasti, i
+Locri, i Frigi.
+
+Le specie di ottava riportate sopra sono state considerate unicamente in base
+al genere diatonico (tono (T), tono (T) e semitono (S)), ma naturalmente esse
+potevano essere costruite anche nel genere cromatico ed enarmonico.
 
 \section{Sistema naturale}
 % TODO trascrivere
