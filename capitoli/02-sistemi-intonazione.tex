@@ -424,7 +424,123 @@ musicalmente.\footnote{R.~M.~H. Bosanquet, \emph{An Elementary Treatise on
 Musical Intervals and Temperaments}, London 1876.}
 
 \section{Costruzione di un sistema di intonazione non temperato}
-% TODO trascrivere
+
+Prima di passare a considerare alcuni sistemi di intonazione, sarà utile
+tornare momentaneamente alla corda vibrante per vedere come gli intervalli da
+essa ricavabili possano essere articolati in un sistema. Sappiamo che dividendo
+successivamente una corda secondo determinate proporzioni si ottiene una
+sequenza di altezze diverse. Ora, se le proporzioni utilizzate seguono una
+progressione pari a quella dei numeri interi, le altezze risultanti formeranno
+una serie armonica derivata dai rapporti:
+\[
+  \tfrac{1}{1} \quad \tfrac{1}{2} \quad \tfrac{1}{3} \quad \tfrac{1}{4} \quad
+  \tfrac{1}{5} \quad \tfrac{1}{6} \quad \tfrac{1}{7} \quad \text{ecc.}
+\]
+che, tradotti in termini frequenziali (dove 1 sia uguale a $100$~Hz, frequenza
+ipotetica propria di una corda vibrante), daranno:
+\begin{center}
+\begin{tabular}{r@{${}={}$}l}
+  $\tfrac{1}{1}$ & $100$~Hz \quad(frequenza generatrice)\footnote{La frequenza
+    generatrice o fondamentale in una serie armonica può anche essere definita
+    come \emph{modulo} della serie in quanto il $\Delta f$ tra le singole
+    componenti è sempre rappresentato dal valore di questo modulo.} \\
+  $\tfrac{1}{2}$ & $200$~Hz \\
+  $\tfrac{1}{3}$ & $300$~Hz \\
+  $\tfrac{1}{4}$ & $400$~Hz \\
+  $\tfrac{1}{5}$ & $500$~Hz \\
+  $\tfrac{1}{6}$ & $600$~Hz \\
+  $\tfrac{1}{7}$ & $700$~Hz \\
+\end{tabular}
+\end{center}
+oppure come intervalli: $1 = $ fondamentale, $\tfrac{1}{2} = $ ottava,
+$\tfrac{1}{3} = $ dodicesima, $\tfrac{1}{4} = $ quindicesima (doppia ottava),
+$\tfrac{1}{5} = $ diciassettesima, $\tfrac{1}{6} = $ diciannovesima,
+$\tfrac{1}{7} = $ ventunesima.
+
+La sequenza delle altezze così risultanti determina l'inizio di una serie
+infinita conosciuta come \emph{serie degli armonici}. Gli intervalli che la
+formano sono tutti più grandi del rapporto 2, quindi per poterli riportare nello
+spazio di un'ottava essi dovranno essere ridotti. L'operazione per ottenere ciò,
+come abbiamo già visto, consiste nel moltiplicare il numeratore della frazione
+di ciascun intervallo per una potenza di 2 fintantoché esso non divenga un
+numero intero più grande della metà di quello del denominatore:
+\[
+  \tfrac{1}{3}\times\tfrac{2}{1}=\tfrac{2}{3} \qquad
+  \tfrac{1}{4}\times\tfrac{4}{1}=\tfrac{4}{4} \qquad
+  \tfrac{1}{5}\times\tfrac{4}{1}=\tfrac{4}{5} \qquad
+  \tfrac{1}{6}\times\tfrac{4}{1}=\tfrac{4}{6} \qquad
+  \tfrac{1}{7}\times\tfrac{4}{1}=\tfrac{4}{7}
+\]
+Inoltre, sapendo che il numero dei periodi per secondo è inversamente
+proporzionale alla parte di corda vibrante e volendo trovare i valori di
+frequenza, si dovranno invertire i due termini dei rapporti tenendo conto che
+gli unici rapporti in grado di generare altezze distinte, cioè che non siano
+ottave superiori, sono quelli il cui numeratore è un fattore primo: $1, 2, 3, 5,
+7, 11$ ecc.\ (v.\ Appendice 5), quindi nel nostro caso:
+\[
+  \tfrac{1}{1} \quad \tfrac{2}{1} \quad \tfrac{3}{2} \quad \tfrac{5}{4} \quad
+  \tfrac{7}{4}
+\]
+essendo la frequenza generatrice $1 = 100$~Hz, ogni rapporto verrà moltiplicato
+per 100:
+\begin{align*}
+  100 \times \tfrac{2}{1} &= 200~\text{Hz} &
+  100 \times \tfrac{3}{2} &= 150~\text{Hz} \\
+  100 \times \tfrac{5}{4} &= 125~\text{Hz} &
+  100 \times \tfrac{7}{4} &= 175~\text{Hz}
+\end{align*}
+Disponendo i valori di frequenza così ottenuti in scala ne risulterà un sistema
+di intervalli dato da:
+\[
+  100,\ 125,\ 150,\ 175,\ 200~\text{(Hz)}
+\]
+i cui intervalli tra un grado e l'altro della scala sono:
+\[
+  \tfrac{5}{4} \quad \tfrac{6}{5} \quad \tfrac{7}{6} \quad \tfrac{8}{7}
+\]
+Per questo calcolo degli intervalli vedi \emph{Sistema pitagorico}.
+
+Per quanto un sistema di intonazione così articolato sia proceduralmente
+ineccepibile, esso ha tuttavia una caratteristica alquanto particolare.
+Indipendentemente dal numero dei rapporti impiegati nell'ottava, il valore
+frequenziale tra ciascun grado della serie rimane costante anziché aumentare via
+via che il suono si fa più acuto. Vale a dire che l'intervallo tra due armonici
+consecutivi dà sempre le stesse differenze di frequenza. In base a questa
+caratteristica, tale sistema di intervalli risulta musicalmente di difficile
+applicazione in quanto, come sappiamo, il nostro orecchio non percepisce delle
+differenze di frequenze uguali come equivalenti.
+
+Quanto detto risulterà ancora più chiaro nell'esempio che segue, dove viene
+costruito un sistema di intervalli considerando non soltanto i primi armonici
+della serie, ma $16$\footnote{Dei 16 rapporti soltanto 8 hanno una identità in
+grado di generare altezze distinte.} (vedi Appendice 1), che daranno i seguenti
+rapporti nell'ottava:
+\[
+  \tfrac{1}{1} \quad \tfrac{9}{8} \quad \tfrac{5}{4} \quad \tfrac{11}{8} \quad
+  \tfrac{3}{2} \quad \tfrac{13}{8} \quad \tfrac{7}{4} \quad \tfrac{15}{8} \quad
+  \tfrac{2}{1}
+\]
+Tradotti in frequenza risulterà una serie così formata:
+\[
+  100,\ 112{,}5,\ 125,\ 137{,}5,\ 150,\ 162{,}5,\ 175,\ 187{,}5,\ 200~\text{(Hz)}
+\]
+Si noterà che la differenza di frequenza tra ciascun grado, $12{,}5$~Hz, rimane
+costante.
+
+Ne deriva che un sistema di intervalli risultante da una serie armonica darà
+sempre un'altra serie armonica, il cui valore in frequenza del fondamentale
+della seconda dipenderà dalla frequenza generatrice della prima serie in
+rapporto al numero degli intervalli considerati nell'ottava. Nel nostro caso
+avremo:
+\begin{center}
+\resizebox{\textwidth}{!}{$\displaystyle
+  \text{fondamentale} = \frac{\text{frequenza generatrice della serie}}
+    {\text{numero degli intervalli nell'ottava}} = \frac{100~\text{Hz}}{8}
+    = 12{,}5~\text{Hz}$}
+\end{center}
+Vedremo ora invece come gli intervalli della serie degli armonici sono stati
+utilizzati per la costruzione di alcuni fondamentali sistemi di intonazione non
+temperati.
 
 \section{Sistema pitagorico}
 % TODO trascrivere
