@@ -20,7 +20,7 @@ era in fondo).
 ├── Makefile                 # `make` -> main.pdf
 ├── capitoli/
 │   ├── 00-introduzione.tex          # COMPLETO (con epigrafe e firma)
-│   ├── 01-elementi-calcolo-intervalli.tex  # apertura completa; §1.1+ da fare
+│   ├── 01-elementi-calcolo-intervalli.tex  # COMPLETO (§1.1–§1.3.3)
 │   └── 02-sistemi-intonazione.tex   # scheletro sezioni; testo da fare
 ├── appendici/
 │   └── appendici.tex        # Appendice 1-5 (scheletro)
@@ -52,12 +52,15 @@ documento si compila anche senza LilyPond installato.
 
 ## Stato dei lavori
 
-Fatto: frontespizio, Introduzione integrale, Indice in apertura, apertura del
-Cap. 1 (aritmetica degli intervalli), bibliografia, pipeline esempi musicali.
+Fatto: frontespizio, Introduzione integrale, Indice in apertura, **Cap. 1
+completo** (aritmetica degli intervalli, comma/schisma, §1.1 Intervalli
+complementari, §1.2 Intervalli logaritmici con diagramma cents/frequenza in
+TikZ, §1.3 Conversione rapporto/cents/rapporto e relative sottosezioni),
+bibliografia, pipeline esempi musicali.
 
-Da fare: Cap. 1 §1.1–§1.3.3, Cap. 2 §2.1–§2.8 (con esempi su pentagramma e il
-diagramma circolare), Appendici, completamento Glossario, rifinitura
-bibliografia. I punti aperti sono marcati con `% TODO` nei sorgenti.
+Da fare: Cap. 2 §2.1–§2.8 (con esempi su pentagramma e il diagramma circolare),
+Appendici, completamento Glossario, rifinitura bibliografia. I punti aperti
+sono marcati con `% TODO` nei sorgenti.
 
 ## Note
 

@@ -10,6 +10,7 @@
 *.run.xml
 *.toc
 *.synctex.gz
+*-SAVE-ERROR
 build/
 # il PDF finale puo' essere ricostruito con `make`
 main.pdf
