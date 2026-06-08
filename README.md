@@ -21,9 +21,9 @@ era in fondo).
 ├── capitoli/
 │   ├── 00-introduzione.tex          # COMPLETO (con epigrafe e firma)
 │   ├── 01-elementi-calcolo-intervalli.tex  # COMPLETO (§1.1–§1.3.3)
-│   └── 02-sistemi-intonazione.tex   # scheletro sezioni; testo da fare
+│   └── 02-sistemi-intonazione.tex   # COMPLETO (§2.1–§2.8)
 ├── appendici/
-│   └── appendici.tex        # Appendice 1-5 (scheletro)
+│   └── appendici.tex        # App. 1,2,4,5 COMPLETE; App. 3 da fare
 ├── glossario.tex            # voci finali + tabella proporzioni; inizio da fare
 ├── esempi/                  # esempi musicali (LilyPond -> PDF ritagliato)
 │   ├── _global.ily          # impostazioni condivise
@@ -56,16 +56,24 @@ Fatto: frontespizio, Introduzione integrale, Indice in apertura, **Cap. 1
 completo** (aritmetica degli intervalli, comma/schisma, §1.1 Intervalli
 complementari, §1.2 Intervalli logaritmici con diagramma cents/frequenza in
 TikZ, §1.3 Conversione rapporto/cents/rapporto e relative sottosezioni),
-bibliografia, pipeline esempi musicali. Nel **Cap. 2** sono completi §2.1–§2.4
-(Sistema pitagorico) e **§2.5 Tetracordo, generi e sistemi nella musica greca**
-(generi diatonico/cromatico/enarmonico con diagrammi TikZ, limma/apotome/comma
-pitagorico, sistema perfetto minore/maggiore/immutabile, nomi delle corde
-della Lira, specie di ottava).
+bibliografia, pipeline esempi musicali. Il **Cap. 2 è completo** (§2.1–§2.8):
+sistemi temperati a divisione semplice e multipla, participato mesotonico,
+costruzione di un sistema non temperato, sistema pitagorico, tetracordo e
+generi della musica greca, e — appena aggiunte — **§2.6 Sistema naturale**
+(scala diatonica naturale, comma sintonico, problemi di modulazione),
+**§2.7 Oltre il fattore 5** (sistema di Harry Partch: scala a 29 rapporti,
+colmatura delle distanze, tabella dei 43 intervalli, intervalli epimori) e
+**§2.8** (sistema armonico di Alain Daniélou: sette serie di quinte generatrici
+con diagrammi TikZ, tabella dei 53 intervalli, intervalli regolatori).
 
-Da fare: Cap. 2 §2.6–§2.8 (Sistema naturale, Oltre il fattore 5, Altra
-possibilità di organizzazione degli intervalli — con esempi su pentagramma e il
-diagramma circolare), Appendici, completamento Glossario, rifinitura
-bibliografia. I punti aperti sono marcati con `% TODO` nei sorgenti.
+**Appendici**: tutte complete — 1 (serie degli armonici), 2 (temperamento
+equabile), 3 (340 intervalli naturali nel rapporto 2/1, con cents verificati
+per ricalcolo), 4 (potenze di 2 e di 3) e 5 (numeri primi inferiori a 3000).
+**Glossario**: completo (voci da *Cent* a *Varietà di temperamento mesotonico*
+più la tabella delle proporzioni). Aggiunta in chiusura la **nota biografica**
+su Walter Branchi.
+
+Da fare: rifinitura bibliografia (alcune voci con `% TODO verifica`).
 
 ## Note
 

@@ -1422,11 +1422,588 @@ al genere diatonico (tono (T), tono (T) e semitono (S)), ma naturalmente esse
 potevano essere costruite anche nel genere cromatico ed enarmonico.
 
 \section{Sistema naturale}
-% TODO trascrivere
 
+Abbiamo visto precedentemente come il sistema pitagorico fosse formato
+soltanto da intervalli ``puri'' ricavati dai fattori primi 1, 2 e 3 (ottave e
+quinte). Vediamo ora invece come nel sistema di intonazione naturale, oltre ai
+suddetti intervalli, si aggiungono anche quelli derivati dal fattore primo 5
+ed in special modo l'intervallo ``superparticolare''\footnote{\label{nota:superpart}Sono
+considerati intervalli superparticolari tutti quegli intervalli che
+corrispondono all'espressione $(n+1)/n$ con $n$ intero maggiore di 1.
+Es.\ $3/2$, $5/4$ ecc.\ Oppure nei loro rivolti $2n/(n+1)$ sempre con $n$
+intero maggiore di 1. Es.\ $4/3$, $8/5$ ecc.} $5/4$ o terza maggiore naturale.
+L'intero sistema pertanto è strutturato esclusivamente sui rapporti $4:5:6$
+ovvero $4/4 = 1/1$, $5/4$ e $6/4 = 3/2$.
+
+Data la presenza di due sole costituenti (quinte e terze maggiori naturali) in
+grado di generare altezze distinte, il completo sistema d'intonazione naturale
+forma un infinito insieme bidimensionale di altezze.
+
+La ragione che ha portato all'introduzione dell'intervallo $5/4$ è da
+ricercarsi principalmente nella esigenza di avere delle terze maggiori che
+fossero, nell'accordo, più consonanti di quelle derivate dalla serie delle
+quinte.
+
+Essendo quindi tutti gli intervalli del sistema risultanti da quinte e terze
+naturali, la formula per ricavare le altezze relative sarà:
+\[
+  \left(\frac{3}{2}\right)^{a} \times \left(\frac{5}{4}\right)^{b}
+\]
+Questo calcolo diviene abbastanza semplice da effettuarsi se tutti i fattori di
+2 vengono inizialmente trascurati. In questo caso la formula si trasforma in:
+\[
+  3^{a} \times 5^{b}
+\]
+nella quale $a$ e $b$ designano il numero di quinte e terze maggiori contenute
+nell'intervallo in questione.
+
+Per esempio l'intervallo di quarta aumentata, tritono, nel sistema naturale
+sarà $2\text{Q}+\text{T} = 3\times3\times5 = 45 \times \frac{1}{32}$ (riduzione
+nell'ottava) $= \frac{45}{32}$. La scala diatonica naturale di DO maggiore
+risulterà quindi formata da:
+\[
+  \begin{array}{ll}
+    \text{DO}=1; & \text{SOL}\,(=\text{Q})=3; \\[3pt]
+    \text{RE}\,(=2\text{Q})=3\times3=9; & \text{LA}\,(=\text{T}-\text{Q})=\tfrac{5}{4}:\tfrac{3}{2}=\tfrac{5}{3}; \\[3pt]
+    \text{MI}\,(=\text{T})=5; & \text{SI}\,(=\text{T}+\text{Q})=3\times5=15. \\[3pt]
+    \text{FA}\,(=-\text{Q})=\tfrac{1}{3}; &
+  \end{array}
+\]
+
+Riportando i valori così ottenuti entro l'ambito $2/1$ avremo:
+\[
+  \begin{array}{ccccccccc}
+    \text{DO} & \text{RE} & \text{MI} & \text{FA} & \text{SOL} & \text{LA} & \text{SI} & \text{DO} \\[4pt]
+    \tfrac{1}{1} & \tfrac{9}{8} & \tfrac{5}{4} & \tfrac{4}{3}
+      & \tfrac{3}{2} & \tfrac{5}{3} & \tfrac{15}{8} & \tfrac{2}{1}
+  \end{array}
+\]
+che per $1 = 100$~Hz daranno i seguenti valori frequenziali:
+\[
+  100,\ 112{,}5,\ 125,\ 133{,}3,\ 150,\ 166{,}6,\ 187{,}5,\ 200~\text{(Hz)}
+\]
+Gli intervalli tra i diversi gradi della scala diatonica naturale sono:
+\[
+  \begin{array}{ccccccccccccccc}
+    \text{DO} & & \text{RE} & & \text{MI} & & \text{FA} & & \text{SOL} & & \text{LA} & & \text{SI} & & \text{DO} \\
+    & \tfrac{9}{8} & & \tfrac{10}{9} & & \tfrac{16}{15} & & \tfrac{9}{8}
+    & & \tfrac{10}{9} & & \tfrac{9}{8} & & \tfrac{16}{15} &
+  \end{array}
+\]
+
+La differenza tra scala diatonica naturale e quella pitagorica consiste nel
+fatto che il terzo, il sesto e il settimo grado hanno tra loro lo scarto di un
+comma sintonico o di Tolomeo:
+
+\begin{center}\small
+\begin{tabular}{l*{8}{c}}
+            & DO & RE & MI & FA & SOL & LA & SI & DO \\[2pt]
+  \emph{natur.} & $\tfrac{1}{1}$ & $\tfrac{9}{8}$ & $\tfrac{5}{4}$ & $\tfrac{4}{3}$
+            & $\tfrac{3}{2}$ & $\tfrac{5}{3}$ & $\tfrac{15}{8}$ & $\tfrac{2}{1}$ \\[4pt]
+            &    &    & \footnotesize 21,5 &    &    & \footnotesize 21,5 & \footnotesize 21,5 &
+            \makebox[0pt][l]{\quad\footnotesize cents} \\[4pt]
+  \emph{pitag.} & $\tfrac{1}{1}$ & $\tfrac{9}{8}$ & $\tfrac{81}{64}$ & $\tfrac{4}{3}$
+            & $\tfrac{3}{2}$ & $\tfrac{27}{16}$ & $\tfrac{243}{128}$ & $\tfrac{2}{1}$ \\
+\end{tabular}
+\end{center}
+
+ovvero:
+\begin{align*}
+  \text{MI} &= \frac{5}{4} \times \frac{64}{81} = \frac{320}{324}
+             = \frac{80}{81} = \frac{81}{80} \\[4pt]
+  \text{LA} &= \frac{5}{3} \times \frac{16}{27} = \frac{80}{81} = \frac{81}{80} \\[4pt]
+  \text{SI} &= \frac{15}{8} \times \frac{128}{243} = \frac{1920}{1944}
+             = \frac{80}{81} = \frac{81}{80}
+\end{align*}
+
+Sebbene il sistema di intonazione naturale fosse conosciuto anche
+nell'antichità, prova ne siano i monocordi di Didimo e Tolomeo che appunto
+prevedevano quinte e terze maggiori naturali, esso rimase sepolto durante tutto
+il Medio Evo e fu riscoperto all'inizio dell'era moderna subendo però alterne
+vicende in quanto una sua applicazione agli strumenti, soprattutto quelli a
+tastiera, era molto problematica. Infatti gli intervalli $9/8$ e $10/9$,
+rispettivamente tono maggiore o grande e tono minore o piccolo, formano una
+scala diatonica con due intervalli di tono diversi. Inoltre, sempre nella scala
+di, poniamo, DO maggiore, vi è la quinta RE--LA che, anziché essere $3/2$, è
+$40/27$:
+\[
+  \frac{9}{8} \times \frac{3}{5} = \frac{27}{40} = \frac{40}{27} = 680~\text{cents}
+\]
+Un altro problema è rappresentato dall'impossibilità di modulare a causa della
+discordanza di uno stesso tono in due scale diverse.
+
+\begin{center}\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ccccccccccccccc}
+  DO & & RE & & MI & & FA & & SOL & & LA & & SI & & DO \\
+  & $\tfrac{9}{8}$ & & $\tfrac{10}{9}$ & & $\tfrac{16}{15}$ & & $\tfrac{9}{8}$
+  & & $\tfrac{10}{9}$ & & $\tfrac{9}{8}$ & & $\tfrac{16}{15}$ & \\[4pt]
+  SOL & & LA & & SI & & DO & & RE & & MI & & FA$\sharp$ & & SOL \\
+\end{tabular}}
+\end{center}
+
+Dall'esempio risulta chiaramente come i toni SOL--LA e LA--SI nella scala di DO
+maggiore siano dati dagli intervalli $10/9$ e $9/8$, mentre nella scala di SOL
+maggiore gli stessi toni sono dati dagli intervalli $9/8$ e $10/9$. Le
+difficoltà aumentano rapidamente con l'introduzione dei gradi cromatici. Molti
+di questi problemi furono in parte risolti impiegando scale con un numero di
+gradi superiore a quelli della scala eptatonica o dodecatonica e di conseguenza
+costruendo anche strumenti a tastiera adatti. In questo modo lo scarto
+risultante dalle diverse combinazioni di terze maggiori e quinte veniva risolto
+usando due tasti diversi. Tra le tante soluzioni ricordiamo soltanto la scala di
+Marin Mersenne che prevedeva 31 intervalli ineguali nell'ottava e applicata da
+Joan Albert Ban nella costruzione dei suoi clavicembali. Un'altra scala meno
+elaborata è quella conosciuta come scala naturale zarliniana articolata su 19
+gradi nello spazio di un'ottava (\emph{Sopplimenti musicali}, 1588). Comunque,
+il sistema di intonazione naturale fu considerato da grandi teorici della musica
+come Zarlino, Mersenne, Rameau, principalmente come sistema teorico di base.
+
+% =====================================================================
 \section{Oltre il fattore 5}
-% TODO trascrivere
 
+Un'estensione del sistema d'intonazione naturale la si ritrova in Harry Partch,
+compositore americano e teorico della musica (1901--1974). Questo sistema
+prevede, per la sua strutturazione, oltre agli intervalli derivati dai fattori
+primi 2, 3 e 5, anche quelli derivati dal 7, 9 e 11 (il fattore 9, pur non
+essendo primo, ha una identità in grado di generare rapporti le cui altezze sono
+distinte). Quindi l'insieme intervallare nell'ambito dell'ottava è composto,
+oltre che da, ovviamente, $1/1$, dai seguenti rapporti base:
+\[
+  \tfrac{3}{2}\ \ \tfrac{5}{4}\ \ \tfrac{5}{3}\ \ \tfrac{7}{6}\ \ \tfrac{7}{5}\ \
+  \tfrac{7}{4}\ \ \tfrac{9}{8}\ \ \tfrac{9}{7}\ \ \tfrac{9}{5}\ \
+  \tfrac{11}{10}\ \ \tfrac{11}{9}\ \ \tfrac{11}{8}\ \ \tfrac{11}{7}\ \ \tfrac{11}{6}
+\]
+e dai loro rispettivi complementari:
+\[
+  \tfrac{4}{3}\ \ \tfrac{8}{5}\ \ \tfrac{6}{5}\ \ \tfrac{12}{7}\ \ \tfrac{10}{7}\ \
+  \tfrac{8}{7}\ \ \tfrac{16}{9}\ \ \tfrac{14}{9}\ \ \tfrac{10}{9}\ \
+  \tfrac{20}{11}\ \ \tfrac{18}{11}\ \ \tfrac{16}{11}\ \ \tfrac{14}{11}\ \ \tfrac{12}{11}
+\]
+Disponendo i 29 rapporti in ordine crescente si otterrà una scala così formata
+(nella colonna ``cents'' è riportato l'intervallo che separa ciascun grado dal
+successivo):
+
+\begin{center}\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{r l r @{\qquad} r l r @{\qquad} r l r}
+  \toprule
+  N. & rapp. & cents & N. & rapp. & cents & N. & rapp. & cents \\
+  \midrule
+   1) & $1/1$   & 150,6 & 11) & $14/11$ & 17,6 & 21) & $8/5$   & 38,9 \\
+   2) & $12/11$ & 14,4  & 12) & $9/7$   & 63   & 22) & $18/11$ & 31,8 \\
+   3) & $11/10$ & 17,4  & 13) & $4/3$   & 53,3 & 23) & $5/3$   & 48,8 \\
+   4) & $10/9$  & 21,5  & 14) & $11/8$  & 31,2 & 24) & $12/7$  & 35,7 \\
+   5) & $9/8$   & 27,3  & 15) & $7/5$   & 35   & 25) & $7/4$   & 27,3 \\
+   6) & $8/7$   & 35,7  & 16) & $10/7$  & 31,2 & 26) & $16/9$  & 21,5 \\
+   7) & $7/6$   & 48,8  & 17) & $16/11$ & 53,3 & 27) & $9/5$   & 17,4 \\
+   8) & $6/5$   & 31,8  & 18) & $3/2$   & 63   & 28) & $20/11$ & 14,4 \\
+   9) & $11/9$  & 38,9  & 19) & $14/9$  & 17,6 & 29) & $11/6$  & 150,6 \\
+  10) & $5/4$   & 31,2  & 20) & $11/7$  & 31,2 & 30) & $2/1$   & --- \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+Dalla scala ottenuta, osservando il valore dei cents, si noterà che esistono
+alcune distanze tra i rapporti che sono eccessivamente grandi rispetto alle
+altre. Infatti tra $1/1$ e $12/11 = 150{,}6$ cents, $7/6$ e $6/5 = 48{,}8$
+cents, $9/7$ e $4/3 = 63$ cents, $4/3$ e $11/8 = 53{,}3$ cents, $16/11$ e
+$3/2 = 53{,}3$ cents, $3/2$ e $14/9 = 63$ cents, $5/3$ e $12/7 = 48{,}8$ cents
+ed infine tra $11/6$ e $2/1 = 150{,}6$ cents. Tali distanze vengono colmate con
+l'introduzione di nuovi rapporti il cui intervallo non sia più piccolo del
+minimo intervallo della serie base ($12/11$, $11/10 = 121/120 = 14{,}4$ cents).
+
+La scelta di questi nuovi intervalli, tra i tanti possibili, è stata effettuata
+tenendo conto del limite dato dal fattore primo 11 e dalle necessità
+compositive di articolazione del sistema stesso.\footnote{Per maggiori
+chiarimenti su questo punto e su tutta la teoria musicale di Harry Partch, si
+rimanda al volume \emph{Genesis of a Music}.}
+
+Pertanto ecco i primi otto rapporti che vanno a colmare le distanze più grandi.
+La prima distanza ($1/1$--$12/11$) viene suddivisa da quattro nuovi rapporti:
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=0.058cm,y=1cm]
+  \draw[thick] (0,0) -- (150.6,0);
+  \foreach \c/\lab in {0/{\tfrac{1}{1}}, 21.5/{\tfrac{81}{80}}, 53.3/{\tfrac{33}{32}},
+      84.5/{\tfrac{21}{20}}, 111.8/{\tfrac{16}{15}}, 150.6/{\tfrac{12}{11}}}{
+    \draw (\c,-0.12) -- (\c,0.12);
+    \node[above,font=\scriptsize] at (\c,0.12) {$\lab$};}
+  \foreach \a/\b/\s in {0/21.5/{21,5}, 21.5/53.3/{31,8}, 53.3/84.5/{31,2},
+      84.5/111.8/{27,3}, 111.8/150.6/{38,9}}{
+    \node[below,font=\scriptsize] at ({(\a+\b)/2},-0.12) {\s};}
+  \node[above,font=\footnotesize] at (75.3,0.6) {(150,6 cents)};
+\end{tikzpicture}
+\end{figure}
+
+La stessa suddivisione di $12/11$ avviene anche per la seconda distanza
+($11/6$--$2/1$), colmata dai rapporti complementari dei precedenti:
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=0.058cm,y=1cm]
+  \draw[thick] (0,0) -- (150.6,0);
+  \foreach \c/\lab in {0/{\tfrac{11}{6}}, 38.9/{\tfrac{15}{8}}, 66.2/{\tfrac{40}{21}},
+      97.4/{\tfrac{64}{33}}, 129.2/{\tfrac{160}{81}}, 150.6/{\tfrac{2}{1}}}{
+    \draw (\c,-0.12) -- (\c,0.12);
+    \node[above,font=\scriptsize] at (\c,0.12) {$\lab$};}
+  \foreach \a/\b/\s in {0/38.9/{38,9}, 38.9/66.2/{27,3}, 66.2/97.4/{31,2},
+      97.4/129.2/{31,8}, 129.2/150.6/{21,5}}{
+    \node[below,font=\scriptsize] at ({(\a+\b)/2},-0.12) {\s};}
+  \node[above,font=\footnotesize] at (75.3,0.6) {(150,6 cents)};
+\end{tikzpicture}
+\end{figure}
+
+Gli altri sei rapporti vanno a colmare, uno ciascuna, le distanze più piccole:
+
+\begin{center}\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{c c l c c}
+  \toprule
+  distanza & ampiezza & rapporto inserito & suddivisione (cents) \\
+  \midrule
+  $7/6$--$6/5$    & $36/35 = 48{,}8$ & $32/27$ & $27{,}3 + 21{,}5$ \\
+  $9/7$--$4/3$    & $28/27 = 63$     & $21/16$ & $35{,}7 + 27{,}3$ \\
+  $4/3$--$11/8$   & $33/32 = 53{,}3$ & $27/20$ & $21{,}5 + 31{,}8$ \\
+  $16/11$--$3/2$  & $33/32 = 53{,}3$ & $40/27$ & $31{,}8 + 21{,}5$ \\
+  $3/2$--$14/9$   & $28/27 = 63$     & $32/21$ & $27{,}3 + 35{,}7$ \\
+  $5/3$--$12/7$   & $36/35 = 48{,}8$ & $27/16$ & $21{,}5 + 27{,}3$ \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+Quindi i 14 nuovi rapporti sono:
+\[
+  \tfrac{81}{80}\ \ \tfrac{15}{8}\ \ \tfrac{33}{32}\ \ \tfrac{21}{20}\ \
+  \tfrac{27}{16}\ \ \tfrac{21}{16}\ \ \tfrac{27}{20}
+\]
+e i loro complementari:
+\[
+  \tfrac{160}{81}\ \ \tfrac{16}{15}\ \ \tfrac{64}{33}\ \ \tfrac{40}{21}\ \
+  \tfrac{32}{27}\ \ \tfrac{32}{21}\ \ \tfrac{40}{27}
+\]
+In questo modo l'intero complesso dei rapporti, ordinati in modo crescente
+nell'ottava, formerà un sistema d'intonazione strutturato secondo 43 intervalli
+ineguali:
+
+{\footnotesize
+\begin{longtable}{r @{\;} l c c c}
+  \caption*{Sistema di Harry Partch (43 intervalli nell'ottava)} \\
+  \toprule
+  N. & Rapporto & Intervallo & \makecell{Cents\\(differenza)} & \makecell{Cents\\(somma)} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  N. & Rapporto & Intervallo & \makecell{Cents\\(differenza)} & \makecell{Cents\\(somma)} \\
+  \midrule
+  \endhead
+  \midrule \endfoot
+  \bottomrule \endlastfoot
+   1) & $1/1$    & ---       & ---  & 0 \\
+   2) & $81/80$  & $81/80$   & 21,5 & 21,5 \\
+   3) & $33/32$  & $55/54$   & 31,8 & 53,2 \\
+   4) & $21/20$  & $56/55$   & 31,2 & 84,5 \\
+   5) & $16/15$  & $64/63$   & 27,3 & 111,7 \\
+   6) & $12/11$  & $45/44$   & 38,9 & 150,6 \\
+   7) & $11/10$  & $121/120$ & 14,4 & 165 \\
+   8) & $10/9$   & $100/99$  & 17,4 & 182,4 \\
+   9) & $9/8$    & $81/80$   & 21,5 & 203,9 \\
+  10) & $8/7$    & $64/63$   & 27,3 & 231,2 \\
+  11) & $7/6$    & $49/48$   & 35,7 & 266,9 \\
+  12) & $32/27$  & $64/63$   & 27,3 & 294,1 \\
+  13) & $6/5$    & $81/80$   & 21,5 & 315,6 \\
+  14) & $11/9$   & $55/54$   & 31,8 & 347,4 \\
+  15) & $5/4$    & $45/44$   & 38,9 & 386,3 \\
+  16) & $14/11$  & $56/55$   & 31,2 & 417,5 \\
+  17) & $9/7$    & $99/98$   & 17,6 & 435,1 \\
+  18) & $21/16$  & $49/48$   & 35,7 & 470,8 \\
+  19) & $4/3$    & $64/63$   & 27,3 & 498 \\
+  20) & $27/20$  & $81/80$   & 21,5 & 519,5 \\
+  21) & $11/8$   & $55/54$   & 31,8 & 551,3 \\
+  22) & $7/5$    & $56/55$   & 31,2 & 582,5 \\
+  23) & $10/7$   & $50/49$   & 35   & 617,5 \\
+  24) & $16/11$  & $56/55$   & 31,2 & 648,7 \\
+  25) & $40/27$  & $81/80$   & 21,5 & 680,5 \\
+  26) & $3/2$    & $64/63$   & 27,3 & 702 \\
+  27) & $32/21$  & $49/48$   & 35,7 & 729,2 \\
+  28) & $14/9$   & $99/98$   & 17,6 & 764,9 \\
+  29) & $11/7$   & $56/55$   & 31,2 & 782,3 \\
+  30) & $8/5$    & $45/44$   & 38,9 & 813,7 \\
+  31) & $18/11$  & $55/54$   & 31,8 & 852,6 \\
+  32) & $5/3$    & $81/80$   & 21,5 & 884,4 \\
+  33) & $27/16$  & $64/63$   & 27,3 & 905,9 \\
+  34) & $12/7$   & $49/48$   & 35,7 & 933,1 \\
+  35) & $7/4$    & $64/63$   & 27,3 & 968,8 \\
+  36) & $16/9$   & $81/80$   & 21,5 & 996,1 \\
+  37) & $9/5$    & $100/99$  & 17,4 & 1017,6 \\
+  38) & $20/11$  & $121/120$ & 14,4 & 1035 \\
+  39) & $11/6$   & $45/44$   & 38,9 & 1049,4 \\
+  40) & $15/8$   & $64/63$   & 27,3 & 1088,3 \\
+  41) & $40/21$  & $56/55$   & 31,2 & 1115,5 \\
+  42) & $64/33$  & $55/54$   & 31,8 & 1146,8 \\
+  43) & $160/81$ & $81/80$   & 21,5 & 1178,5 \\
+  44) & $2/1$    & $81/80$   & 21,5 & 1200 \\
+\end{longtable}
+}
+
+che per $1 = 100$~Hz darà i seguenti valori frequenziali:
+
+\begin{center}\small
+\begin{tabular}{r l @{\qquad} r l @{\qquad} r l @{\qquad} r l}
+   1) & 100   & 12) & 118,5 & 23) & 142,8 & 34) & 171,4 \\
+   2) & 101,2 & 13) & 120   & 24) & 145,4 & 35) & 175 \\
+   3) & 103,1 & 14) & 122,2 & 25) & 148,1 & 36) & 177,7 \\
+   4) & 105   & 15) & 125   & 26) & 150   & 37) & 180 \\
+   5) & 106,6 & 16) & 127,2 & 27) & 152,3 & 38) & 181,8 \\
+   6) & 109   & 17) & 128,5 & 28) & 155,5 & 39) & 183,3 \\
+   7) & 110   & 18) & 131,2 & 29) & 157   & 40) & 187,5 \\
+   8) & 111,1 & 19) & 133,3 & 30) & 160   & 41) & 190,4 \\
+   9) & 112,5 & 20) & 135   & 31) & 163,6 & 42) & 193,9 \\
+  10) & 114,5 & 21) & 137,5 & 32) & 166,6 & 43) & 197,5 \\
+  11) & 116   & 22) & 140   & 33) & 168,7 & 44) & 200 \\
+\end{tabular}
+\end{center}
+
+Le distanze tra i 43 rapporti del sistema sono regolate da 10 diversi
+intervalli epimori:\footnote{\emph{Epimorio} (una parte aggiunta) è il termine
+usato dai greci per definire intervalli \emph{superparticolari} (vedi nota a
+p.~\pageref{nota:superpart}).}
+\[
+  \tfrac{121}{120}\ \ \tfrac{100}{99}\ \ \tfrac{99}{98}\ \ \tfrac{81}{80}\ \
+  \tfrac{64}{63}\ \ \tfrac{56}{55}\ \ \tfrac{55}{54}\ \ \tfrac{50}{49}\ \
+  \tfrac{49}{48}\ \ \tfrac{45}{44}
+\]
+Il sistema di intonazione di Partch è stato ampiamente sperimentato nelle sue
+composizioni musicali. Anche gli strumenti, per poterle eseguire, sono stati
+adattati, studiati e inventati da Harry Partch stesso.
+
+% =====================================================================
 \section{Altra possibilità di organizzazione degli intervalli derivante dai
          fattori generativi 2, 3 e 5}
-% TODO trascrivere
+
+Gli intervalli che formano questo sistema derivano dai fattori primi 2, 3, 5 e
+loro multipli in qualsiasi combinazione. L'intero sistema è definito
+esclusivamente da rapporti armonici, dove per rapporto armonico si intende un
+rapporto i cui termini costitutivi, quando divisi per 2, 3 e 5, sono riducibili
+ad 1.
+
+Il sistema armonico che prenderemo in esame è quello elaborato da Alain
+Daniélou (1907), teorico della musica e musicologo francese che ha approfondito
+lo studio del pensiero e delle musiche orientali con particolare attenzione a
+quella indiana.
+
+L'insieme degli intervalli che determinano le proporzioni di questo sistema
+viene ricavato partendo da una tonica $1/1$, da tre terze minori armoniche
+($6/5$) successive e da tre seste maggiori armoniche ($5/3$) successive (la
+sesta maggiore non è altro che l'intervallo complementare della terza minore).
+
+Questi sei intervalli, più la tonica, costituiscono i rapporti base generatori
+delle sette serie di quinte necessarie a formare 53 intervalli ineguali
+nell'ambito dell'ottava:
+
+\medskip\noindent serie base, pitagorica, poggiante su $1/1$;\\
+tre serie derivanti dagli intervalli di terza minore:
+\[
+  \frac{6}{5} \;-\; \left(\frac{6}{5}\right)^{2}=\frac{36}{25} \;-\;
+  \left(\frac{6}{5}\right)^{3}=\frac{216}{125} \;-
+\]
+tre serie derivanti dagli intervalli di sesta maggiore:
+\[
+  \frac{5}{3} \;-\; \frac{5}{6}=\left(\frac{5}{6}\right)^{2}=\frac{25}{18} \;-\;
+  \left(\frac{5}{6}\right)^{3}=\frac{125}{216}=\frac{125}{108} \;-
+\]
+
+La formula di generazione degli intervalli di ogni serie è la seguente:
+\[
+  \left(\frac{6}{5}\right)^{a} \times \left(\frac{3}{2}\right)^{b} \times 2^{c}
+\]
+dove il valore di $a$ (che va da $+3$ a $-3$, cioè verso l'alto e verso il
+basso) determina l'asse della quinta ($a = 0$ per la serie di base), il valore
+di $b$ (da $+5$ a $-5$) definisce invece l'ordine della quinta ($b = 0$ per
+l'asse delle quinte). Quanto a $c$, il suo valore è quello necessario per la
+riduzione nell'ottava. Quindi, per ricavare gli intervalli successivi
+ascendenti e discendenti dato l'intervallo base, bisogna semplicemente
+moltiplicare o dividere quest'ultimo per $3/2$:
+\begin{align*}
+  \frac{6}{5}\times\frac{3}{2} &= \frac{18}{10} = \frac{9}{5}; &
+  \frac{9}{5}\times\frac{3}{2} &= \frac{27}{20}\ \text{ecc.} \\[4pt]
+  \frac{6}{5}\times\frac{4}{3} &= \frac{24}{15} = \frac{8}{5}\ \text{ecc.}
+\end{align*}
+oppure:
+\begin{align*}
+  \frac{5}{6}\times\frac{3}{2} &= \frac{15}{12} = \frac{5}{4}; &
+  \frac{5}{4}\times\frac{3}{2} &= \frac{15}{8}\ \text{ecc.} \\[4pt]
+  \frac{5}{6}\times\frac{4}{3} &= \frac{20}{18} = \frac{10}{9}\ \text{ecc.}
+\end{align*}
+
+La serie base sarà formata pertanto, oltre che dal fondamentale, da cinque
+quinte ascendenti e cinque discendenti:
+
+\begin{center}
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[x=1.15cm,y=1cm,
+    base/.style={draw,rounded corners,inner sep=2.5pt}]
+  \node[anchor=east,font=\itshape] at (-0.6,0) {serie base $\left(\tfrac{1}{1}\right)$:};
+  \foreach \i/\n/\d in {0/256/243, 1/128/81, 2/32/27, 3/16/9, 4/4/3,
+      6/3/2, 7/9/8, 8/27/16, 9/81/64, 10/243/128}{
+    \node at (\i,0) {$\frac{\n}{\d}$};}
+  \node[base] at (5,0) {$\frac{1}{1}$};
+  \draw[->] (4.5,-0.55) -- (-0.45,-0.55);
+  \draw[->] (5.5,0.55) -- (10.45,0.55);
+\end{tikzpicture}}
+\end{center}
+
+La II e la III serie vengono ricavate dai due intervalli complementari $6/5$ e
+$5/3$ e sono formate rispettivamente, oltre che da detti intervalli, la II da
+quattro quinte ascendenti e tre discendenti, mentre la III da tre quinte
+ascendenti e cinque discendenti:
+
+\begin{center}
+\begin{tikzpicture}[x=1.15cm,y=1cm,
+    base/.style={draw,rounded corners,inner sep=2.5pt}]
+  \node[anchor=east,font=\itshape] at (-0.6,0) {II serie $\left(\tfrac{6}{5}\right)$:};
+  \foreach \i/\n/\d in {0/64/45, 1/16/15, 2/8/5, 4/9/5, 5/27/20, 6/81/80, 7/243/160}{
+    \node at (\i,0) {$\frac{\n}{\d}$};}
+  \node[base] at (3,0) {$\frac{6}{5}$};
+  \draw[->] (2.5,-0.55) -- (-0.45,-0.55);
+  \draw[->] (3.5,0.55) -- (7.45,0.55);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[x=1.15cm,y=1cm,
+    base/.style={draw,rounded corners,inner sep=2.5pt}]
+  \node[anchor=east,font=\itshape] at (-0.6,0) {III serie $\left(\tfrac{5}{6}\right)$:};
+  \foreach \i/\n/\d in {0/320/243, 1/160/81, 2/40/27, 3/10/9, 5/5/4, 6/15/8, 7/45/32}{
+    \node at (\i,0) {$\frac{\n}{\d}$};}
+  \node[base] at (4,0) {$\frac{5}{3}$};
+  \draw[->] (3.5,-0.55) -- (-0.45,-0.55);
+  \draw[->] (4.5,0.55) -- (7.45,0.55);
+\end{tikzpicture}
+\end{center}
+
+La IV e la V serie vengono ricavate dagli altri due intervalli complementari
+$(6/5)^2 = 36/25$ e $(5/3)^2 = 25/18$ e sono formate entrambe, oltre che
+dall'intervallo base, da quattro quinte ascendenti e quattro discendenti:
+
+\begin{center}
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[x=1.15cm,y=1cm,
+    base/.style={draw,rounded corners,inner sep=2.5pt}]
+  \node[anchor=east,font=\itshape] at (-0.6,0) {IV serie $\left(\tfrac{36}{25}\right)$:};
+  \foreach \i/\n/\d in {0/256/225, 1/128/75, 2/32/25, 3/48/25, 5/27/25, 6/81/50, 7/243/200, 8/729/400}{
+    \node at (\i,0) {$\frac{\n}{\d}$};}
+  \node[base] at (4,0) {$\frac{36}{25}$};
+  \draw[->] (3.5,-0.55) -- (-0.45,-0.55);
+  \draw[->] (4.5,0.55) -- (8.45,0.55);
+\end{tikzpicture}}
+\end{center}
+
+\begin{center}
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[x=1.15cm,y=1cm,
+    base/.style={draw,rounded corners,inner sep=2.5pt}]
+  \node[anchor=east,font=\itshape] at (-0.6,0) {V serie $\left(\tfrac{25}{18}\right)$:};
+  \foreach \i/\n/\d in {0/800/729, 1/400/243, 2/100/81, 3/50/27, 5/25/24, 6/25/16, 7/75/64, 8/225/128}{
+    \node at (\i,0) {$\frac{\n}{\d}$};}
+  \node[base] at (4,0) {$\frac{25}{18}$};
+  \draw[->] (3.5,-0.55) -- (-0.45,-0.55);
+  \draw[->] (4.5,0.55) -- (8.45,0.55);
+\end{tikzpicture}}
+\end{center}
+
+Ed infine, le ultime due serie vengono ricavate dai due intervalli
+complementari $(6/5)^3 = 216/125$ e $(5/3)^3 = 125/108$ e sono formate
+rispettivamente da quattro quinte discendenti e quattro ascendenti:
+
+\begin{center}
+\begin{tikzpicture}[x=1.15cm,y=1cm,
+    base/.style={draw,rounded corners,inner sep=2.5pt}]
+  \node[anchor=east,font=\itshape] at (-0.6,0) {VI serie $\left(\tfrac{216}{125}\right)$:};
+  \foreach \i/\n/\d in {1/512/375, 2/128/125, 3/192/125, 4/144/125}{
+    \node at (\i,0) {$\frac{\n}{\d}$};}
+  \node[base] at (0,0) {$\frac{216}{125}$};
+  \draw[->] (4.45,-0.55) -- (0.55,-0.55);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[x=1.15cm,y=1cm,
+    base/.style={draw,rounded corners,inner sep=2.5pt}]
+  \node[anchor=east,font=\itshape] at (-0.6,0) {VII serie $\left(\tfrac{125}{108}\right)$:};
+  \foreach \i/\n/\d in {1/125/72, 2/125/96, 3/125/64, 4/375/256}{
+    \node at (\i,0) {$\frac{\n}{\d}$};}
+  \node[base] at (0,0) {$\frac{125}{108}$};
+  \draw[->] (0.55,0.55) -- (4.45,0.55);
+\end{tikzpicture}
+\end{center}
+
+Il complesso dei 53 rapporti, così ricavati, disposti in ordine crescente
+nell'ottava daranno:
+
+{\footnotesize
+\begin{longtable}{r @{\;} l r @{\qquad} r @{\;} l r @{\qquad} r @{\;} l r}
+  \caption*{Sistema armonico di Alain Daniélou (53 intervalli nell'ottava)} \\
+  \toprule
+  N. & intervallo & cents & N. & intervallo & cents & N. & intervallo & cents \\
+  \midrule
+  \endfirsthead
+  \toprule
+  N. & intervallo & cents & N. & intervallo & cents & N. & intervallo & cents \\
+  \midrule
+  \endhead
+  \midrule \endfoot
+  \bottomrule \endlastfoot
+   1) & $1/1$      & 0     & 19) & $81/64$    & 407,8 & 37) & $8/5$      & 813,7 \\
+   2) & $81/80$    & 21,5  & 20) & $32/25$    & 427,3 & 38) & $81/50$    & 835,2 \\
+   3) & $128/125$  & 41    & 21) & $125/96$   & 457   & 39) & $400/243$  & 862,9 \\
+   4) & $25/24$    & 70,7  & 22) & $320/243$  & 476,5 & 40) & $5/3$      & 884,4 \\
+   5) & $256/243$  & 90,2  & 23) & $4/3$      & 498   & 41) & $27/16$    & 905,9 \\
+   6) & $16/15$    & 111,7 & 24) & $27/20$    & 519,5 & 42) & $128/75$   & 925,4 \\
+   7) & $27/25$    & 133,2 & 25) & $512/375$  & 539   & 43) & $125/72$   & 955 \\
+   8) & $800/729$  & 160,9 & 26) & $25/18$    & 568,7 & 44) & $225/128$  & 976,5 \\
+   9) & $10/9$     & 182,4 & 27) & $45/32$    & 590,2 & 45) & $16/9$     & 996,1 \\
+  10) & $9/8$      & 203,9 & 28) & $64/45$    & 609,8 & 46) & $9/5$      & 1017,6 \\
+  11) & $256/225$  & 223,4 & 29) & $36/25$    & 631,3 & 47) & $729/400$  & 1039,1 \\
+  12) & $144/125$  & 244,9 & 30) & $375/256$  & 661   & 48) & $50/27$    & 1066,8 \\
+  13) & $75/64$    & 274,6 & 31) & $40/27$    & 680,5 & 49) & $15/8$     & 1088,3 \\
+  14) & $32/27$    & 294,1 & 32) & $3/2$      & 702   & 50) & $243/128$  & 1109,8 \\
+  15) & $6/5$      & 315,6 & 33) & $243/160$  & 723,5 & 51) & $48/25$    & 1129,3 \\
+  16) & $243/200$  & 337,1 & 34) & $192/125$  & 743   & 52) & $125/64$   & 1159 \\
+  17) & $100/81$   & 364,8 & 35) & $25/16$    & 772,7 & 53) & $160/81$   & 1178,5 \\
+  18) & $5/4$      & 386,3 & 36) & $128/81$   & 792,2 & 54) & $2/1$      & 1200 \\
+\end{longtable}
+}
+
+che per $1 = 100$~Hz formano un insieme frequenziale così composto:
+
+\begin{center}\small
+\begin{tabular}{r l @{\qquad} r l @{\qquad} r l @{\qquad} r l}
+   1) & 100   & 15) & 120   & 29) & 144   & 43) & 173,6 \\
+   2) & 101,2 & 16) & 121,5 & 30) & 146,5 & 44) & 175,8 \\
+   3) & 102,4 & 17) & 123,5 & 31) & 148,1 & 45) & 177,8 \\
+   4) & 104,1 & 18) & 125   & 32) & 150   & 46) & 180 \\
+   5) & 105,3 & 19) & 126,6 & 33) & 151,9 & 47) & 182,2 \\
+   6) & 106,6 & 20) & 128   & 34) & 153,6 & 48) & 185,1 \\
+   7) & 108   & 21) & 130,2 & 35) & 156,2 & 49) & 187,5 \\
+   8) & 109,7 & 22) & 131,6 & 36) & 158   & 50) & 189,8 \\
+   9) & 111,1 & 23) & 133,3 & 37) & 160   & 51) & 192 \\
+  10) & 112,5 & 24) & 135   & 38) & 162   & 52) & 195,3 \\
+  11) & 113,7 & 25) & 136,5 & 39) & 164,6 & 53) & 197,5 \\
+  12) & 115,2 & 26) & 138,9 & 40) & 166,7 & 54) & 200 \\
+  13) & 117,1 & 27) & 140,6 & 41) & 168,7 &     & \\
+  14) & 118,5 & 28) & 142,2 & 42) & 170,7 &     & \\
+\end{tabular}
+\end{center}
+
+Le distanze tra i 53 rapporti dell'intero sistema sono pertanto regolate da
+quattro diversi intervalli:
+
+\begin{center}
+\begin{tabular}{l l l}
+  $81/80$         & $= 21{,}5$ cents (comma sintonico) & $= 26$ rapporti \\
+  $2048/2025$     & $= 19{,}5$ cents (diaschisma)       & $= 15$ rapporti \\
+  $3125/3072$     & $= 29{,}7$ cents                    & $= 8$ rapporti \\
+  $20000/19683$   & $= 27{,}7$ cents                    & $= 4$ rapporti \\
+\end{tabular}
+\end{center}
