@@ -69,10 +69,11 @@ con diagrammi TikZ, tabella dei 53 intervalli, intervalli regolatori).
 **Appendici**: tutte complete — 1 (serie degli armonici), 2 (temperamento
 equabile), 3 (340 intervalli naturali nel rapporto 2/1, con cents verificati
 per ricalcolo), 4 (potenze di 2 e di 3) e 5 (numeri primi inferiori a 3000).
-Aggiunta in chiusura la **nota biografica** su Walter Branchi.
+**Glossario**: completo (voci da *Cent* a *Varietà di temperamento mesotonico*
+più la tabella delle proporzioni). Aggiunta in chiusura la **nota biografica**
+su Walter Branchi.
 
-Da fare: voci iniziali del Glossario (A–R), rifinitura bibliografia. I punti
-aperti sono marcati con `% TODO` nei sorgenti.
+Da fare: rifinitura bibliografia (alcune voci con `% TODO verifica`).
 
 ## Note
 
