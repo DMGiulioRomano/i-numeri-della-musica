@@ -66,12 +66,13 @@ colmatura delle distanze, tabella dei 43 intervalli, intervalli epimori) e
 **§2.8** (sistema armonico di Alain Daniélou: sette serie di quinte generatrici
 con diagrammi TikZ, tabella dei 53 intervalli, intervalli regolatori).
 
-**Appendici**: complete la 1 (serie degli armonici), la 2 (temperamento
-equabile), la 4 (potenze di 2 e di 3) e la 5 (numeri primi inferiori a 3000).
+**Appendici**: tutte complete — 1 (serie degli armonici), 2 (temperamento
+equabile), 3 (340 intervalli naturali nel rapporto 2/1, con cents verificati
+per ricalcolo), 4 (potenze di 2 e di 3) e 5 (numeri primi inferiori a 3000).
+Aggiunta in chiusura la **nota biografica** su Walter Branchi.
 
-Da fare: Appendice 3 (tabella dei 140 intervalli naturali nel rapporto 2/1),
-voci iniziali del Glossario (A–R), rifinitura bibliografia. I punti aperti sono
-marcati con `% TODO` nei sorgenti.
+Da fare: voci iniziali del Glossario (A–R), rifinitura bibliografia. I punti
+aperti sono marcati con `% TODO` nei sorgenti.
 
 ## Note
 
