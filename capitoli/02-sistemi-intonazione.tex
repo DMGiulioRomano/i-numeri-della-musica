@@ -307,19 +307,20 @@ diviene di $117{,}1$ cents e il semitono cromatico ($92$ cents) è di $76$ cents
   \centering\setlength{\tabcolsep}{4pt}
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{*{13}{c}}
-    Do & Do$\sharp$ & Re & Mi$\flat$ & Mi & Fa & Fa$\sharp$ & Sol & Sol$\sharp$
-       & La & Si$\flat$ & Si & Do \\
+    \textbf{Do} & \textbf{Do$\sharp$} & \textbf{Re} & \textbf{Mi$\flat$} & \textbf{Mi} & \textbf{Fa} & \textbf{Fa$\sharp$} & \textbf{Sol} & \textbf{Sol$\sharp$}
+       & \textbf{La} & \textbf{Si$\flat$} & \textbf{Si} & \textbf{Do} \\
     \addlinespace
     0 & 76 & 193,2 & 310,3 & 386,3 & 503,4 & 579,5 & 696,6 & 772,6 & 889,7
       & 1006,8 & 1082,9 & 1200 \\
+    \addlinespace
+    -  & 193,2 & - & 193,2 & - & 117,1 & 193,2 & - & 193,2 & - & 193,2 & - & 117,1\\
   \end{tabular}}
 \end{figure}
 
 Questa procedura porta ad una scala che, rispetto a quella pitagorica, sarà così
 configurata (v.\ schema del sistema mesotonico participato di $1/4$ di comma):
 
-\begin{figure}[htbp]
-  \centering
+\begin{center}
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{l*{8}{c}}
     pitagorica: & Do & Re & Mi & Fa & Sol & La & Si & Do \\
@@ -329,19 +330,20 @@ configurata (v.\ schema del sistema mesotonico participato di $1/4$ di comma):
                 & La$^{-3/4}$ & Si$^{-5/4}$ & Do \\
                 & 0 & 193,2 & 386,2 & 503,4 & 696,6 & 889,7 & 1082,9 & 1200 \\
   \end{tabular}}
-\end{figure}
+\end{center}
 
 e nella sua forma completa risulterà:
 
-\begin{figure}[htbp]
-  \centering\setlength{\tabcolsep}{5pt}
+\begin{center}\setlength{\tabcolsep}{5pt}
   \resizebox{\textwidth}{!}{%
-  \begin{tabular}{*{13}{c}}
+  \begin{tabular}{*{9}{c} @{} l @{} *{4}{c}}
     Do & Do$\sharp^{-7/4}$ & Re$^{-1/2}$ & Mi$\flat^{+3/4}$ & Mi$^{-1}$
-       & Fa$^{+1/4}$ & Fa$\sharp^{-3/2}$ & Sol$^{-1/4}$ & Sol$\sharp^{-2}$
+       & Fa$^{+1/4}$ & Fa$\sharp^{-3/2}$ & Sol$^{-1/4}$ & La$\flat^{+1}$
+       & \multirow{2}{*}{$\left.\rule{0pt}{3ex}\right]$}
        & La$^{-3/4}$ & Si$\flat^{+1/2}$ & Si$^{-5/4}$ & Do \\
+    & & & & & & & & Sol$\sharp^{-2}$ & & & & & \\
   \end{tabular}}
-\end{figure}
+\end{center}
 
 Da quanto detto precedentemente, l'intero sistema sarà pertanto ricavato da tre
 serie di quattro quinte abbassate ciascuna di $1/4$ di comma sintonico (come
@@ -355,31 +357,50 @@ semplificazione rispetto a DO, due serie verso l'alto ed una verso il basso):
       rn/.style={font=\footnotesize\itshape},
       adj/.style={font=\footnotesize}]
     % --- serie A: verso il basso (bemolli) ---
-    \foreach \x/\n/\r/\a in {%
-        0/{La$\flat$(Sol$\sharp$)}/I/$+1$, 1/{Mi$\flat$}/II/$+\frac34$,
-        2/{Si$\flat$}/III/$+\frac12$, 3/{Fa}/IV/$+\frac14$, 4/{Do}//comma}{
+    % note
+    \foreach \x/\n in {%
+        0/{La$\flat$(Sol$\sharp$)}, 1/{Mi$\flat$},
+        2/{Si$\flat$}, 3/{Fa}, 4/{Do}}{
       \node[nota] (A\x) at (\x,4) {\n};
-      \ifx\r\empty\else\node[rn] at (\x,4.6) {\r};\fi
-      \node[adj] at (\x,3.4) {\a};
     }
+    % romani e aggiustamenti a metà tra nota \x e nota \x+1
+    \foreach \x/\r/\a in {%
+        0/I/$+1$, 1/II/$+\frac34$, 2/III/$+\frac12$, 3/IV/$+\frac14$}{
+      \pgfmathsetmacro{\mx}{\x+0.5}
+      \node[rn]  at (\mx,4.6) {\r};
+      \node[adj] at (\mx,3.4) {\a};
+    }
+    % "comma" dopo l'ultima nota (serie A termina in Do)
+    \node[adj] at (4,3.4) {comma};
     \draw (A0)--(A1)--(A2)--(A3)--(A4);
     % --- serie B: verso l'alto ---
-    \foreach \x/\n/\r/\a in {%
-        0/{Do}/V/$-\frac14$, 1/{Sol}/VI/$-\frac12$, 2/{Re}/VII/$-\frac34$,
-        3/{La}/VIII/comma, 4/{Mi}//{}}{
+    % note
+    \foreach \x/\n in {%
+        0/{Do}, 1/{Sol}, 2/{Re}, 3/{La}, 4/{Mi}}{
       \node[nota] (B\x) at (\x,2) {\n};
-      \ifx\r\empty\else\node[rn] at (\x,2.6) {\r};\fi
-      \node[adj] at (\x,1.4) {\a};
+    }
+    \foreach \x/\r/\a in {%
+        0/V/$-\frac14$, 1/VI/$-\frac12$, 2/VII/$-\frac34$, 3/VIII/$-1$}{
+      \pgfmathsetmacro{\mx}{\x+0.5}
+      \node[rn]  at (\mx,2.6) {\r};
+      \node[adj] at (\mx,1.4) {\a};
     }
     \draw (B0)--(B1)--(B2)--(B3)--(B4);
+    \node[adj] at (4,1.4) {comma};
     % --- serie C: verso l'alto (diesis) ---
-    \foreach \x/\n/\r/\a in {%
-        0/{Mi}/IX/$-\frac54$, 1/{Si}/X/$-\frac64$, 2/{Fa$\sharp$}/XI/$-\frac74$,
-        3/{Do$\sharp$}/XII/$-2$, 4/{Sol$\sharp$(La$\flat$)}//comma}{
+    % note
+    \foreach \x/\n in {%
+        0/{Mi}, 1/{Si}, 2/{Fa$\sharp$}, 3/{Do$\sharp$}, 4/{Sol$\sharp$(La$\flat$)}}{
       \node[nota] (C\x) at (\x,0) {\n};
-      \ifx\r\empty\else\node[rn] at (\x,0.6) {\r};\fi
-      \node[adj] at (\x,-0.6) {\a};
     }
+    \foreach \x/\r/\a in {%
+        0/IX/$-\frac54$, 1/X/$-\frac64$, 2/XI/$-\frac74$, 3/XII/$-2$}{
+      \pgfmathsetmacro{\mx}{\x+0.5}
+      \node[rn]  at (\mx,0.6) {\r};
+      \node[adj] at (\mx,-0.6) {\a};
+    }
+    % "comma" dopo l'ultima nota serie C
+    \node[adj] at (4,-0.6) {comma};
     \draw (C0)--(C1)--(C2)--(C3)--(C4);
   \end{tikzpicture}}
 \end{figure}
@@ -433,29 +454,30 @@ sequenza di altezze diverse. Ora, se le proporzioni utilizzate seguono una
 progressione pari a quella dei numeri interi, le altezze risultanti formeranno
 una serie armonica derivata dai rapporti:
 \[
-  \tfrac{1}{1} \quad \tfrac{1}{2} \quad \tfrac{1}{3} \quad \tfrac{1}{4} \quad
-  \tfrac{1}{5} \quad \tfrac{1}{6} \quad \tfrac{1}{7} \quad \text{ecc.}
+  \tfrac{1}{1}; \quad \tfrac{1}{2}; \quad \tfrac{1}{3}; \quad \tfrac{1}{4}; \quad
+  \tfrac{1}{5}; \quad \tfrac{1}{6}; \quad \tfrac{1}{7}; \quad \text{ecc.}
 \]
 che, tradotti in termini frequenziali (dove 1 sia uguale a $100$~Hz, frequenza
 ipotetica propria di una corda vibrante), daranno:
 \begin{center}
 \begin{tabular}{r@{${}={}$}l}
-  $\tfrac{1}{1}$ & $100$~Hz \quad(frequenza generatrice)\footnote{La frequenza
+  $1/1$ & $100$~Hz \quad(frequenza generatrice)\footnote{La frequenza
     generatrice o fondamentale in una serie armonica può anche essere definita
     come \emph{modulo} della serie in quanto il $\Delta f$ tra le singole
-    componenti è sempre rappresentato dal valore di questo modulo.} \\
-  $\tfrac{1}{2}$ & $200$~Hz \\
-  $\tfrac{1}{3}$ & $300$~Hz \\
-  $\tfrac{1}{4}$ & $400$~Hz \\
-  $\tfrac{1}{5}$ & $500$~Hz \\
-  $\tfrac{1}{6}$ & $600$~Hz \\
-  $\tfrac{1}{7}$ & $700$~Hz \\
+    componenti è sempre rappresentato dal valore di questo modulo.} \\[4pt]
+  $1/2$ & $200$~Hz \\[4pt]
+  $1/3$ & $300$~Hz \\[4pt]
+  $1/4$ & $400$~Hz \\[4pt]
+  $1/5$ & $500$~Hz \\[4pt]
+  $1/6$ & $600$~Hz \\[4pt]
+  $1/7$ & $700$~Hz \\
+  \multicolumn{2}{l}{ecc.} \\
 \end{tabular}
 \end{center}
-oppure come intervalli: $1 = $ fondamentale, $\tfrac{1}{2} = $ ottava,
-$\tfrac{1}{3} = $ dodicesima, $\tfrac{1}{4} = $ quindicesima (doppia ottava),
-$\tfrac{1}{5} = $ diciassettesima, $\tfrac{1}{6} = $ diciannovesima,
-$\tfrac{1}{7} = $ ventunesima.
+oppure come intervalli: $1 = $ fondamentale, $1/2 = $ ottava,
+$1/3 = $ dodicesima, $1/4 = $ quindicesima (doppia ottava),
+$1/5 = $ diciassettesima, $1/6 = $ diciannovesima,
+$1/7 = $ ventunesima.
 
 La sequenza delle altezze così risultanti determina l'inizio di una serie
 infinita conosciuta come \emph{serie degli armonici}. Gli intervalli che la
@@ -465,11 +487,11 @@ come abbiamo già visto, consiste nel moltiplicare il numeratore della frazione
 di ciascun intervallo per una potenza di 2 fintantoché esso non divenga un
 numero intero più grande della metà di quello del denominatore:
 \[
-  \tfrac{1}{3}\times\tfrac{2}{1}=\tfrac{2}{3} \qquad
-  \tfrac{1}{4}\times\tfrac{4}{1}=\tfrac{4}{4} \qquad
-  \tfrac{1}{5}\times\tfrac{4}{1}=\tfrac{4}{5} \qquad
-  \tfrac{1}{6}\times\tfrac{4}{1}=\tfrac{4}{6} \qquad
-  \tfrac{1}{7}\times\tfrac{4}{1}=\tfrac{4}{7}
+  \tfrac{1}{3}\times\tfrac{2}{1}=\tfrac{2}{3}; \quad
+  \tfrac{1}{4}\times\tfrac{2}{1}=\tfrac{2}{4}=\tfrac{1}{2}; \quad
+  \tfrac{1}{5}\times\tfrac{2^2}{1}=\tfrac{4}{5}; \quad
+  \tfrac{1}{6}\times\tfrac{2^2}{1}=\tfrac{4}{6}=\tfrac{2}{3}; \quad
+  \tfrac{1}{7}\times\tfrac{2^2}{1}=\tfrac{4}{7}
 \]
 Inoltre, sapendo che il numero dei periodi per secondo è inversamente
 proporzionale alla parte di corda vibrante e volendo trovare i valori di
@@ -478,15 +500,14 @@ gli unici rapporti in grado di generare altezze distinte, cioè che non siano
 ottave superiori, sono quelli il cui numeratore è un fattore primo: $1, 2, 3, 5,
 7, 11$ ecc.\ (v.\ Appendice 5), quindi nel nostro caso:
 \[
-  \tfrac{1}{1} \quad \tfrac{2}{1} \quad \tfrac{3}{2} \quad \tfrac{5}{4} \quad
-  \tfrac{7}{4}
+  \tfrac{1}{2}=\tfrac{2}{1}; \quad \tfrac{2}{3}=\tfrac{3}{2}; \quad \tfrac{4}{5}=\tfrac{5}{4}; \quad \tfrac{4}{7}=\tfrac{7}{4};
 \]
 essendo la frequenza generatrice $1 = 100$~Hz, ogni rapporto verrà moltiplicato
 per 100:
 \begin{align*}
-  100 \times \tfrac{2}{1} &= 200~\text{Hz} &
-  100 \times \tfrac{3}{2} &= 150~\text{Hz} \\
-  100 \times \tfrac{5}{4} &= 125~\text{Hz} &
+  100 \times \tfrac{2}{1} &= 200~\text{Hz} \\[6pt]
+  100 \times \tfrac{3}{2} &= 150~\text{Hz} \\[6pt]
+  100 \times \tfrac{5}{4} &= 125~\text{Hz} \\[6pt]
   100 \times \tfrac{7}{4} &= 175~\text{Hz}
 \end{align*}
 Disponendo i valori di frequenza così ottenuti in scala ne risulterà un sistema
@@ -496,7 +517,7 @@ di intervalli dato da:
 \]
 i cui intervalli tra un grado e l'altro della scala sono:
 \[
-  \tfrac{5}{4} \quad \tfrac{6}{5} \quad \tfrac{7}{6} \quad \tfrac{8}{7}
+  \tfrac{5}{4}; \quad \tfrac{6}{5}; \quad \tfrac{7}{6}; \quad \tfrac{8}{7}
 \]
 Per questo calcolo degli intervalli vedi \emph{Sistema pitagorico}.
 
@@ -527,8 +548,8 @@ Tradotti in frequenza risulterà una serie così formata:
 Si noterà che la differenza di frequenza tra ciascun grado, $12{,}5$~Hz, rimane
 costante.
 
-Ne deriva che un sistema di intervalli risultante da una serie armonica darà
-sempre un'altra serie armonica, il cui valore in frequenza del fondamentale
+Ne deriva che \emph{un sistema di intervalli risultante da una serie armonica darà
+sempre un'altra serie armonica} il cui valore in frequenza del fondamentale
 della seconda dipenderà dalla frequenza generatrice della prima serie in
 rapporto al numero degli intervalli considerati nell'ottava. Nel nostro caso
 avremo:
@@ -554,15 +575,31 @@ la metà e per la quinta la corda viene divisa in tre parti, ma mentre nel caso
 dell'ottava il reciproco di $1/2$ è ugualmente $1/2$, nel secondo caso avremo da
 una parte della corda $1/3$ e dall'altra il suo reciproco cioè $2/3$.
 
+\begin{center}
+\begin{tikzpicture}[x=6cm, y=1cm]
+  % corda completa
+  \draw[thick, dashed] (0,0) -- (1,0);
+  % capotasto sinistro
+  \draw[thick] (0,-0.25) -- (0,0.25);
+  % capotasto destro (ponticello)
+  \draw[thick] (1,-0.25) -- (1,0.25);
+  % divisore a 1/3
+  \draw[thick] (0.333,-0.15) -- (0.333,0.15);
+  % etichette
+  \node[above] at (0.167, 0.15) {$1/3$};
+  \node[above] at (0.667, 0.15) {$2/3$};
+\end{tikzpicture}
+\end{center}
+
 Questo nuovo intervallo (che è un'ottava più basso di $1/3$) forma, rispetto
 all'ottava, un intervallo di quarta ($2/3$), che riportato nello spazio di
 un'ottava diviene $4/3$. Quindi, dai fattori primi 1, 2 e 3 si sono ricavati i
 quattro intervalli basilari del sistema pitagorico:
 \[
-  \underset{\textstyle 1/1}{\text{DO}} \qquad
-  \underset{\textstyle 4/3}{\text{FA}} \qquad
-  \underset{\textstyle 3/2}{\text{SOL}} \qquad
-  \underset{\textstyle 2/1}{\text{DO}}
+  \begin{array}{cccc}
+    \text{DO} & \text{FA} & \text{SOL} & \text{DO} \\[4pt]
+    \tfrac{1}{1} & \tfrac{4}{3} & \tfrac{3}{2} & \tfrac{2}{1}
+  \end{array}
 \]
 
 Differentemente da quanto visto in precedenza per la costruzione del sistema di
@@ -573,32 +610,37 @@ composta:
 
 \begin{center}\small
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{llll}
-  $\tfrac{2}{3}=$ Fa  & $\tfrac{1}{1}=$ Do & $\tfrac{3}{2}=$ Sol
-    & $\tfrac{3^2}{2^3}=\tfrac{9}{8}=$ Re \\[2pt]
-  $\tfrac{3^3}{2^4}=\tfrac{27}{16}=$ La & $\tfrac{3^4}{2^6}=\tfrac{81}{64}=$ Mi
-    & $\tfrac{3^5}{2^7}=\tfrac{243}{128}=$ Si
-    & $\tfrac{3^6}{2^9}=\tfrac{729}{512}=$ Fa$\sharp$ \\[2pt]
-  $\tfrac{3^7}{2^{10}}=\tfrac{2187}{1024}=$ Do$\sharp$
-    & $\tfrac{3^8}{2^{12}}=\tfrac{6561}{4096}=$ Sol$\sharp$
-    & $\tfrac{3^9}{2^{14}}=\tfrac{19683}{16384}=$ Re$\sharp$
-    & $\tfrac{3^{10}}{2^{15}}=\tfrac{59049}{32768}=$ La$\sharp$ \\[2pt]
-  $\tfrac{3^{11}}{2^{17}}=\tfrac{177147}{131072}=$ Mi$\sharp$
-    & $\tfrac{3^{12}}{2^{19}}=\tfrac{531441}{524288}=$ Si$\sharp$
-    & e così via & \\
+\begin{tabular}{lllll}
+      $\tfrac{2}{3}=$ Fa;
+    & $\tfrac{1}{1}=$ Do;
+    & $\tfrac{3}{2}=$ Sol;
+    & $\tfrac{3^2}{2^3}=\tfrac{9}{8}=$ Re;\\[8pt]
+      $\tfrac{3^3}{2^4}=\tfrac{27}{16}=$ La; 
+    & $\tfrac{3^4}{2^6}=\tfrac{81}{64}=$ Mi;
+    & $\tfrac{3^5}{2^7}=\tfrac{243}{128}=$ Si;
+    & $\tfrac{3^6}{2^9}=\tfrac{729}{512}=$ Fa$\sharp$;\\[8pt]
+     $\tfrac{3^7}{2^{10}}=\tfrac{2187}{1024}=$ Do$\sharp$;
+    & $\tfrac{3^8}{2^{12}}=\tfrac{6561}{4096}=$ Sol$\sharp$; 
+    &  $\tfrac{3^9}{2^{14}}=\tfrac{19683}{16384}=$ Re$\sharp$;
+    & $\tfrac{3^{10}}{2^{15}}=\tfrac{59049}{32768}=$ La$\sharp$; \\[8pt]
+     $\tfrac{3^{11}}{2^{17}}=\tfrac{177147}{131072}=$ Mi$\sharp$;
+    & $\tfrac{3^{12}}{2^{19}}=\tfrac{531441}{524288}=$ Si$\sharp$;
 \end{tabular}}
 \end{center}
 
+e così via.
 Disponendo in ordine crescente il rapporto della quinta inferiore (quarta) e
 delle prime cinque quinte superiori si otterrà la scala diatonica pitagorica:
 
-\begin{center}\small
-\begin{tabular}{l*{8}{c}}
-   & DO & RE & MI & FA & SOL & LA & SI & DO \\
-   & $\tfrac{1}{1}$ & $\tfrac{9}{8}$ & $\tfrac{81}{64}$ & $\tfrac{4}{3}$
-   & $\tfrac{3}{2}$ & $\tfrac{27}{16}$ & $\tfrac{243}{128}$ & $\tfrac{2}{1}$ \\
-\end{tabular}
-\end{center}
+\[
+  \begin{array}{lcccccccc}
+     & \text{DO} & \text{RE} & \text{MI} & \text{FA} & \text{SOL} & \text{LA} & \text{SI} & \text{DO} \\[4pt]
+     & \tfrac{1}{1} & \tfrac{9}{8} & \tfrac{81}{64} & \tfrac{4}{3}
+     & \tfrac{3}{2} & \tfrac{27}{16} & \tfrac{243}{128} & \tfrac{2}{1}
+  \end{array}
+\]
+
+\vspace{6pt}
 
 che per $1 = 100$~Hz darà i seguenti valori frequenziali:
 \[
@@ -607,7 +649,9 @@ che per $1 = 100$~Hz darà i seguenti valori frequenziali:
 In questo modo abbiamo ottenuto i gradi della scala, mentre se vogliamo
 conoscere l'intervallo che esiste tra ciascun grado dovremo moltiplicare le
 rispettive frazioni invertendo sia la seconda frazione che il risultato così
-ottenuto. Per esempio l'intervallo tra RE e MI sarà:
+ottenuto. 
+
+Per esempio l'intervallo tra RE e MI sarà:
 \[
   \frac{9}{8} \times \frac{64}{81} = \frac{576}{648} = \frac{8}{9} = \frac{9}{8}
 \]
@@ -619,10 +663,10 @@ Pertanto gli intervalli tra i diversi gradi della scala diatonica di Pitagora
 sono:
 
 \begin{center}\small
-\begin{tabular}{*{8}{c}}
-  DO & RE & MI & FA & SOL & LA & SI & DO \\
-  $\tfrac{9}{8}$ & $\tfrac{9}{8}$ & $\tfrac{256}{243}$ & $\tfrac{9}{8}$
-  & $\tfrac{9}{8}$ & $\tfrac{9}{8}$ & $\tfrac{256}{243}$ & \\
+\begin{tabular}{*{15}{c}}
+  DO & & RE & & MI & & FA & & SOL & & LA & & SI & & DO \\
+  & $\tfrac{9}{8}$ & & $\tfrac{9}{8}$ & & $\tfrac{256}{243}$ & & $\tfrac{9}{8}$
+  & & $\tfrac{9}{8}$ & & $\tfrac{9}{8}$ & & $\tfrac{256}{243}$ \\
 \end{tabular}
 \end{center}
 
@@ -640,20 +684,14 @@ consecutive, fa sì che la serie delle quinte può essere rappresentata più
 correttamente come una spirale dove ogni $12^{\text{a}}$ quinta lo scarto
 aumenta di un comma.
 
-\begin{figure}[htbp]
-  \centering
-  \begin{tikzpicture}
-    \draw[thick,domain=0:1080,smooth,samples=300,variable=\t]
-      plot ({0.00135*\t*cos(\t)},{0.00135*\t*sin(\t)});
-  \end{tikzpicture}
-\end{figure}
-
 Comunque una ottima approssimazione con i fondamentali la si ottiene alla
 $53^{\text{a}}$ quinta dove la differenza è soltanto di $3{,}4$ cents. La quasi
 totale identità dei valori tra la $53^{\text{a}}$ quinta ($54^{\text{a}}$
 altezza) e il fondamentale ha portato il sistema di intonazione pitagorico,
 esteso a 53 parti ineguali nell'ottava, ad essere uno dei migliori sistemi entro
 i limiti della praticabilità.
+
+\newpage
 
 Questo sistema è stato proposto per la prima volta in Europa dal matematico e
 astronomo danese Nicolas Mercator nel XVII secolo. Egli lo trovò menzionato
@@ -701,26 +739,687 @@ riportando tutti i quozienti nell'ambito dell'ottava.
   \end{tabular}
 \end{table}
 
-% La versione "complementata secondo Walter Link Jr" (tabella con colonna
-% Rapporto e valori a 8 decimali, scan p-33/p-34) introduce correzioni di uno
-% schisma su alcuni gradi e non è riproducibile in modo affidabile dalla
-% scansione degradata: TODO trascrizione/verifica.
+{\footnotesize
+\begin{longtable}{r @{\;} l r r}
+  \caption*{Struttura intervallare del sistema pitagorico
+    (53 intervalli nell'ottava),
+    complementata secondo Walter Link Jr.} \\
+  \toprule
+  \multicolumn{2}{c}{Rapporto} & Coefficiente & Cents \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \multicolumn{2}{c}{Rapporto} & Coefficiente & Cents \\
+  \midrule
+  \endhead
+  \midrule
+  \endfoot
+  \bottomrule
+  \endlastfoot
+    1)  & $1/1$           & 1             & 0 \\
+    2)  & $3^{12}/2^{19}$ & 1,013643265   & 23,460010384 \\
+    3)  & $3^{24}/2^{38}$ & 1,027472669   & 46,920020768 \\
+    4)  & $2^{27}/3^{17}$ & 1,039318249   & 66,76498529 \\
+    5)  & $2^{8}/3^{5}$   & 1,053497943   & 90,224995674 \\
+    6)  & $3^{7}/2^{11}$  & 1,067871095   & 113,685006058 \\
+    7)  & $3^{19}/2^{30}$ & 1,082440343   & 137,145016442 \\
+    8)  & $2^{35}/3^{22}$ & 1,094919638   & 156,989980964 \\
+    9)  & $2^{16}/3^{10}$ & 1,109857917   & 180,449991348 \\
+    10) & $3^{2}/2^{3}$   & 1,125         & 203,910001732 \\
+    11) & $3^{14}/2^{22}$ & 1,140348673   & 227,370012116 \\
+    12) & $2^{43}/3^{27}$ & 1,153495584   & 247,214976638 \\
+    13) & $2^{24}/3^{15}$ & 1,16923303    & 270,674987022 \\
+    14) & $2^{5}/3^{3}$   & 1,185185185   & 294,134997406 \\
+    15) & $3^{9}/2^{14}$  & 1,201354981   & 317,59500779 \\
+    16) & $3^{21}/2^{33}$ & 1,217745385   & 341,055018174 \\
+    17) & $2^{32}/3^{20}$ & 1,231784591   & 360,899982696 \\
+    18) & $2^{13}/3^{8}$  & 1,248590155   & 384,35999308 \\
+    19) & $3^{4}/2^{6}$   & 1,265625      & 407,820003464 \\
+    20) & $3^{16}/2^{25}$ & 1,282892257   & 431,280013848 \\
+    21) & $2^{40}/3^{25}$ & 1,297682532   & 451,12497837 \\
+    22) & $2^{21}/3^{13}$ & 1,315387159   & 474,584988754 \\
+    23) & $2^{2}/3$       & 1,333333333   & 498,044999138 \\
+    24) & $3^{11}/2^{17}$ & 1,351524353   & 521,505009522 \\
+    25) & $3^{23}/2^{36}$ & 1,369963558   & 544,965019906 \\
+    26) & $2^{29}/3^{18}$ & 1,385757665   & 564,809984428 \\
+    27) & $2^{10}/3^{6}$  & 1,404663924   & 588,269994812 \\
+    28) & $3^{6}/2^{9}$   & 1,423828126   & 611,730005196 \\
+    29) & $3^{18}/2^{28}$ & 1,443253791   & 635,19001558 \\
+    30) & $2^{37}/3^{23}$ & 1,45989285    & 655,034980102 \\
+    31) & $2^{18}/3^{11}$ & 1,479810555   & 678,494990486 \\
+    32) & $3/2$           & 1,5           & 701,95500087 \\
+    33) & $3^{13}/2^{20}$ & 1,520464898   & 725,415011254 \\
+    34) & $3^{25}/2^{39}$ & 1,541209003   & 748,875021638 \\
+    35) & $2^{26}/3^{16}$ & 1,558977374   & 768,61998616 \\
+    36) & $2^{7}/3^{4}$   & 1,580246915   & 792,179996544 \\
+    37) & $3^{8}/2^{12}$  & 1,601806642   & 815,640006928 \\
+    38) & $3^{20}/2^{31}$ & 1,623660515   & 839,100017312 \\
+    39) & $2^{34}/3^{21}$ & 1,642379457   & 858,944981834 \\
+    40) & $2^{15}/3^{9}$  & 1,664786875   & 882,404992218 \\
+    41) & $3^{3}/2^{4}$   & 1,6875        & 905,865002602 \\
+    42) & $3^{15}/2^{23}$ & 1,71052301    & 929,325012986 \\
+    43) & $2^{42}/3^{26}$ & 1,730243376   & 949,169977508 \\
+    44) & $2^{23}/3^{14}$ & 1,753849545   & 972,629987892 \\
+    45) & $2^{4}/3^{2}$   & 1,777777778   & 996,089998276 \\
+    46) & $3^{10}/2^{15}$ & 1,802032471   & 1019,55000866 \\
+    47) & $3^{22}/2^{34}$ & 1,826618078   & 1043,01001904 \\
+    48) & $2^{31}/3^{19}$ & 1,847676887   & 1062,85498356 \\
+    49) & $2^{12}/3^{7}$  & 1,872885233   & 1086,31499394 \\
+    50) & $3^{5}/2^{7}$   & 1,8984375     & 1109,77500432 \\
+    51) & $3^{17}/2^{26}$ & 1,924338386   & 1133,2350147 \\
+    52) & $2^{39}/3^{24}$ & 1,946523798   & 1153,07997922 \\
+    53) & $2^{20}/3^{12}$ & 1,973080738   & 1176,5399896 \\
+    54) & $2/1$           & 2             & 1200 \\
+\end{longtable}
+}
+
+Per trovare i valori delle potenze di 2 e di 3 vedi Appendice~4. Volendo
+trasporre il risultato dei rapporti in frequenze corrispondenti, basterà
+semplicemente moltiplicare il valore della frequenza fondamentale ($1/1$) per
+i diversi quozienti. Ad esempio, con $1/1 = 100$ Hz avremo per i primi 5
+rapporti del sistema le seguenti frequenze:
+
+\begin{center}
+  100; 101,3; 102,7; 103,9; 105,3 (Hz) ecc.
+\end{center}
+
+mentre con un fondamentale di, poniamo, 85,7 Hz, si avrà:
+
+\begin{center}
+  85,7; 86,86; 88,05; 89,06; 90,28 (Hz) ecc.
+\end{center}
+
+Il sistema pitagorico, sebbene in disuso in occidente, è tuttora impiegato,
+con scale diverse, presso alcune culture musicali come quella cinese ed araba.
+
+\newpage
+
 
 \section{Tetracordo, generi e sistemi nella musica greca}
-% TODO trascrivere
+
+Come abbiamo avuto modo di vedere, i quattro intervalli basilari del sistema
+pitagorico dividono l'ottava in due quarte (Do--Fa e Sol--Do) che nella teoria
+musicale greca avevano il nome di \emph{tetracordi}. Come dice la parola
+stessa, ciascuno di essi era formato da quattro differenti altezze. I
+tetracordi potevano essere collegati insieme in modo \emph{congiunto}, quando
+l'intervallo di quarta discendente si identificava con il \emph{fondamentale}
+del tetracordo successivo (la nota più alta del tetracordo veniva denominata
+\emph{fondamentale}), oppure \emph{disgiunto} quando tra di essi c'era
+l'intervallo di un tono. Un tetracordo, pensato sempre in senso discendente, è
+caratterizzato da un intervallo di quarta in relazione fissa che lo delimita e
+da altri due intervalli in relazione variabile. Nel collegamento congiunto la
+nota estrema o più bassa di un tetracordo diviene la fondamentale del
+tetracordo successivo (la struttura intervallare degli esempi è sempre riferita
+al \emph{genus} diatonico):
+
+
+\begin{center}\small
+{\setlength{\tabcolsep}{3pt}%
+\begin{tabular}{@{}lllllllllllll@{}}
+re & do & si$\flat$ & la & & & & & & & & \\
+& & & la & sol & fa & mi & & & & & \\
+& & & & & & mi & re & do & si & & \\
+& & & & & & & & & si & la & sol & fa$\sharp$ \\
+\end{tabular}}
+\end{center}
+
+In un sistema di più tetracordi ci sono tante fondamentali quanti sono i
+tetracordi che lo formano. Con questo si vuole sottolineare che in un sistema
+di tetracordi non esiste un'unica fondamentale con funzione di tonica.
+Quando il secondo tetracordo inizia alla distanza di un tono dal precedente si
+ha un tipo di collegamento \emph{disgiunto}:
+
+\begin{center}\small
+{\setlength{\tabcolsep}{3pt}%
+\begin{tabular}{@{}llllllllllllllllllll@{}}
+fa$\sharp$ & mi & re & do$\sharp$ & & & & & & & & & & & & & & & & \\
+& & & & si & la & sol & fa$\sharp$ & & & & & & & & & & & & \\
+& & & & & & & & mi & re & do & si & & & & & & & & \\
+& & & & & & & & & & & & la & sol & fa & mi & & & & \\
+& & & & & & & & & & & & & & & & re & do & si$\flat$ & la \\
+\end{tabular}}
+\end{center}
+
+
+Un terzo tipo di collegamento è tuttavia possibile dalla combinazione alternata
+di congiunto e disgiunto:
+
+\begin{center}\small
+{\setlength{\tabcolsep}{3pt}%
+\begin{tabular}{@{}llllllllllllllllllll@{}}
+mi & re & do & si & & & & & & & & & & & & & & & & \\
+& & & & la & sol & fa & mi & & & & & & & & & & & & \\
+& & & & & & & & mi & re & do & si & & & & & & & & \\
+& & & & & & & & & & & & la & sol & fa & mi & & & & \\
+& & & & & & & & & & & & & & & & mi & re & do & si \\
+\end{tabular}}
+\end{center}
+
+
+Questi tipi di collegamento sono alla base della formazione dei diversi
+\emph{sistemi} della musica greca. Il collegamento tra più tetracordi veniva
+designato con il termine \emph{Harmonia}. Esso, oltre che collegamento,
+connessione e giuntura, indicava anche la disposizione degli intervalli,
+l'altezza del suono, l'andamento della melodia, il colore, l'intensità ecc.
 
 \subsection{Generi}
-% TODO trascrivere
+
+Le diverse posizioni che i due intervalli variabili assumono all'interno del
+tetracordo determinano i tre \emph{genera}: diatonico, cromatico ed
+enarmonico. Conoscere la struttura intervallare dei tre \emph{genera}, e cioè
+l'esatto valore di ogni intervallo variabile, è argomento assai oscuro e
+dibattuto; tuttavia per il nostro studio ci rifaremo al \emph{De institutione
+musica} di Severino Boezio, dove l'interpretazione del filosofo distingue in
+modo molto chiaro le relazioni tra gli intervalli variabili caratteristici di
+ogni \emph{genus}.
+
+
+\vspace{10pt}
+\textit{Genus diatonico}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    x=1.1cm, y=1cm,
+    nota/.style={font=\small},
+    val/.style={font=\scriptsize},
+    frz/.style={font=\small}
+  ]
+  \node[nota,anchor=west] at (0,1.5)     {Net\={e}};
+  \node[nota,anchor=west] at (0,1.1)     {hyperboleon};
+  \node[val,anchor=west]  at (0,0.6)     {2304};
+  \node[nota] at (4.09,1.5)  {Paran\={e}t\={e}};
+  \node[nota] at (4.09,1.1)     {...};
+  \node[val]  at (4.09,0.6)  {2592};
+  \node[nota] at (8.19,1.5)  {Trit\={e}};
+  \node[nota] at (8.19,1.1)     {...};
+  \node[val]  at (8.19,0.6)  {2916};
+  \node[nota] at (10,1.5)    {Net\={e}};
+  \node[nota] at (10,1.1)     {...};
+  \node[val]  at (10,0.6)    {3072};
+  \draw[very thick] (0,0) -- (10,0);
+  \foreach \x in {0,4.09,8.19,10}{\draw[very thick] (\x,-0.12) -- (\x,0.12);}
+  \node[frz] at (2.05,-0.45) {$\tfrac{9}{8}$};
+  \node[frz] at (6.14,-0.45) {$\tfrac{9}{8}$};
+  \node[frz] at (9.10,-0.45) {$\tfrac{256}{243}$};
+  \draw[thick] (0,-1.15) -- (8.19,-1.15);
+  \foreach \x in {0,8.19}{\draw[thick] (\x,-1.27) -- (\x,-1.03);}
+  \node[frz] at (4.09,-1.55) {$\tfrac{81}{64}$};
+  \draw[thick] (0,-2.15) -- (10,-2.15);
+  \foreach \x in {0,10}{\draw[thick] (\x,-2.27) -- (\x,-2.03);}
+  \node[frz] at (5,-2.55) {$\tfrac{4}{3}$};
+\end{tikzpicture}
+
+
+\footnotesize
+$\tfrac{9}{8} = 203{,}9$~cents; \quad
+$\tfrac{256}{243} = 90{,}2$~cents; \quad
+$\tfrac{81}{64} = 407{,}8$~cents; \quad
+$\tfrac{4}{3} = 498$~cents
+\end{figure}
+
+
+\vspace{10pt}
+\textit{Genus cromatico}
+
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    x=1.1cm, y=1cm,
+    nota/.style={font=\small},
+    val/.style={font=\scriptsize},
+    frz/.style={font=\small}
+  ]
+  \node[nota,anchor=west] at (0,1.5)     {N\={e}t\={e}};
+  \node[nota,anchor=west] at (0,1.1)     {hyperboleon};
+  \node[val,anchor=west]  at (0,0.6)     {2304};
+  \node[nota] at (5.97,1.5)  {Paran\={e}t\={e}};
+  \node[nota] at (5.97,1.1)     {...};
+  \node[val]  at (5.97,0.6)  {2736};
+  \node[nota] at (8.19,1.5)  {Trit\={e}};
+  \node[nota] at (8.19,1.1)     {...};
+  \node[val]  at (8.19,0.6)  {2916};
+  \node[nota] at (10,1.5)    {Net\={e}};
+  \node[nota] at (10,1.1)     {...};
+  \node[val]  at (10,0.6)    {3072};
+  \draw[very thick] (0,0) -- (10,0);
+  \foreach \x in {0,5.97,8.19,10}{\draw[very thick] (\x,-0.12) -- (\x,0.12);}
+  \node[frz] at (2.99,-0.45) {$\tfrac{19}{16}$};
+  \node[frz] at (7.08,-0.45) {$\tfrac{81}{76}$};
+  \node[frz] at (9.10,-0.45) {$\tfrac{256}{243}$};
+  \draw[thick] (0,-1.15) -- (8.19,-1.15);
+  \foreach \x in {0,8.19}{\draw[thick] (\x,-1.27) -- (\x,-1.03);}
+  \node[frz] at (4.09,-1.55) {$\tfrac{81}{64}$};
+  \draw[thick] (0,-2.15) -- (10,-2.15);
+  \foreach \x in {0,10}{\draw[thick] (\x,-2.27) -- (\x,-2.03);}
+  \node[frz] at (5,-2.55) {$\tfrac{4}{3}$};
+\end{tikzpicture}
+
+
+\footnotesize
+$\tfrac{19}{16} = 297{,}5$~cents; \quad
+$\tfrac{81}{76} = 110{,}3$~cents; \quad
+$\tfrac{256}{243} = 90{,}2$~cents; \quad
+$\tfrac{81}{64} = 407{,}8$~cents; \quad
+$\tfrac{4}{3} = 498$~cents
+\end{figure}
+
+\vspace{10pt}
+\textit{Genus enarmonico}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    x=1.1cm, y=1cm,
+    nota/.style={font=\small},
+    val/.style={font=\scriptsize},
+    frz/.style={font=\small}
+  ]
+  \node[nota,anchor=west] at (0,1.5)     {Net\={e}};
+  \node[nota,anchor=west] at (0,1.1)     {hyperboleon};
+  \node[val,anchor=west]  at (0,0.6)     {2304};
+  \node[nota] at (8.19,1.5)  {Paran.};
+  \node[nota] at (8.19,1.1)     {...};
+  \node[val]  at (8.19,0.6)  {2916};
+  \node[nota] at (9.11,1.5)  {Trit\={e}};
+  \node[nota] at (9.11,1.1)     {...};
+  \node[val]  at (9.11,0.6) {2994};
+  \node[nota] at (10,1.5)    {Net\={e}};
+  \node[nota] at (10,1.1)     {...};
+  \node[val]  at (10,0.6)    {3072};
+  \draw[very thick] (0,0) -- (10,0);
+  \foreach \x in {0,8.19,9.11,10}{\draw[very thick] (\x,-0.12) -- (\x,0.12);}
+  \node[frz] at (4.09,-0.45) {$\tfrac{81}{64}$};
+  \node[frz] at (8.65,-0.45) {$\tfrac{499}{486}$};
+  \node[frz] at (9.55,-0.7)  {$\tfrac{512}{499}$};
+  \draw[thick] (0,-1.15) -- (9.11,-1.15);
+  \foreach \x in {0,9.11}{\draw[thick] (\x,-1.27) -- (\x,-1.03);}
+  \node[frz] at (4.55,-1.55) {$\tfrac{499}{384}$};
+  \draw[thick] (0,-2.15) -- (10,-2.15);
+  \foreach \x in {0,10}{\draw[thick] (\x,-2.27) -- (\x,-2.03);}
+  \node[frz] at (5,-2.55) {$\tfrac{4}{3}$};
+\end{tikzpicture}
+
+
+\footnotesize
+$\tfrac{81}{64} = 407{,}8$~cents; \quad
+$\tfrac{499}{486} = 45{,}7$~cents; \quad
+$\tfrac{512}{499} = 44{,}5$~cents; \quad
+$\tfrac{499}{384} = 453{,}5$~cents; \quad
+$\tfrac{4}{3} = 498$~cents
+\end{figure}
+
+Nel tetracordo il semitono diatonico venisse chiamato \emph{limma} (cioè
+``avanzo'', ``resto'') in quanto era ottenuto sottraendo due toni interi
+dal tetracordo:
+
+\newpage
+
+\textit{Limma o Diesi:}
+
+\[
+  \frac{2^2}{3} : \left(\frac{3^2}{2^3}\right)^{2}
+  = \frac{2^2}{3} \times \frac{2^6}{3^4}
+  = \frac{2^8}{3^5} = \frac{256}{243} = 90{,}2~\text{cents}
+\]
+La differenza tra un tono intero ed un semitono era
+chiamata \emph{Apotome}, il cui valore corrisponde a:
+
+\vspace{10pt}
+
+\textit{Apotome:}
+
+\[
+  \frac{3^2}{2^3} : \frac{2^8}{3^5}
+  = \frac{3^2}{2^3} \times \frac{3^5}{2^8}
+  = \frac{2187}{2048} = 113{,}7~\text{cents}
+\]
+L'intervallo di apotome è dunque leggermente più grande del limma o diesis; la
+loro differenza tra un tono intero e la somma di due limma dà il \emph{Comma pitagorico}.
+
+\vspace{10pt}
+
+\textit{Comma pitagorico:}
+
+\[
+  \frac{3^{7}}{2^{11}} : \frac{2^{8}}{3^{5}}
+  = \frac{3^{7}}{2^{11}} \times \frac{3^{5}}{2^{8}}
+  = \frac{3^{12}}{2^{19}}
+  = \frac{531441}{524288} = 23{,}5~\text{cents}
+\]
+
+\begin{figure}[htbp]
+\centering
+%
+% Tetracordo diatonico pitagorico Do–Re–Mi–Fa (quarta giusta 4:3 = 498~c).
+% Mib segna la suddivisione D+A all'interno del primo e del secondo tono.
+%
+% Riga 1 — struttura principale:        tono | tono | semitono
+% Riga 2 — suddivisione D/A (90+114):   D A  | D A  | D
+% Riga 3 — suddivisione fine (90+90+24): D D C| D D C| D
+%
+% Scala x: 1 unit = 50 cents
+%   Do=0  Re=4.08  Mib=5.88  Mi=8.16  Fa=9.96
+%
+
+\begin{tikzpicture}[x=0.85cm, y=1cm,
+    iv/.style={font=\footnotesize\itshape},
+    lbl/.style={font=\scriptsize},
+    nota/.style={font=\small\bfseries},
+    alt/.style={font=\scriptsize}]
+
+  % === RIGA 0 — struttura tono/semitono (y=2) ===
+  \node[font=\small\itshape] at (4.98,3.45) {Tetracordo};
+  \draw[dashed] (0,3) -- (9.96,3);
+  \foreach \x in {0, 9.96}
+    {\draw[very thick] (\x,2.78) -- (\x,3.22);}
+
+  % === RIGA 1 — struttura tono/semitono (y=2) ===
+  \draw[dashed] (0,2) -- (9.96,2);
+  \foreach \x in {0, 4.08, 8.16, 9.96}
+    {\draw[very thick] (\x,1.78) -- (\x,2.22);}
+  \node[iv] at (2.04,2.45) {tono};
+  \node[iv] at (6.12,2.45) {tono};
+  \node[iv] at (9.06,2.45) {semitono};
+
+  % === RIGA 2 — D / A (y=1) ===
+  \draw[dashed] (0,1) -- (9.96,1);
+  \foreach \x in {0, 4.08, 5.88, 8.16, 9.96}
+    {\draw[very thick] (\x,0.78) -- (\x,1.22);}
+  %\node[lbl] at (0.90,1.35) {D};  % Do–(90c)
+  %\node[lbl] at (2.94,1.35) {A};  % (90c)–Re
+  \node[lbl] at (4.98,1.35) {D};  % Re–Mib
+  \node[lbl] at (7.02,1.35) {A};  % Mib–Mi
+  \node[lbl] at (9.06,1.35) {D};  % Mi–Fa (semitono = 1 limma)
+
+  % === RIGA 3 — D / D / C (y=0) ===
+  \draw[dashed] (0,0) -- (9.96,0);
+  \foreach \x in {0, 4.08, 5.88, 7.68, 8.16, 9.96}
+    {\draw[very thick] (\x,-0.22) -- (\x,0.22);}
+  %\node[lbl] at (0.90,0.35) {D};
+  %\node[lbl] at (2.70,0.35) {D};
+  %\node[lbl] at (3.84,0.35) {C};
+  \node[lbl] at (4.98,0.35) {D};
+  \node[lbl] at (6.78,0.35) {D};
+  \node[lbl] at (7.92,0.35) {C};
+  \node[lbl] at (9.06,0.35) {D};
+
+  % === Note e nomi greci ===
+  \foreach \x/\n/\a in {
+      0/{Do}/{(sol)},
+      4.08/{Re}/{(la)},
+      5.88/{Mi$\flat$}/{(si$\flat$)},
+      8.16/{Mi}/{(si)},
+      9.96/{Fa}/{(do)}}{
+    \node[nota] at (\x,-0.70) {\n};
+    \node[alt]  at (\x,-1.05) {\a};
+  }
+
+  % === Legenda ===
+  \node[lbl, anchor=west] at (-2,-1.55) {$A=\text{apotome}$};
+  \node[lbl, anchor=west] at (-2,-1.90) {$D=\text{diesis o limma}$};
+  \node[lbl, anchor=west] at (-2,-2.25) {$C=\text{comma pitagorico}$};
+
+\end{tikzpicture}
+\end{figure}
+
+
+\newpage
 
 \subsection{Sistema perfetto}
-% TODO trascrivere
+
+Il minimo sistema nella musica greca è rappresentato dal tetracordo, ma
+sistemi più ampi possono essere formati dall'associazione di più tetracordi.
+Il \emph{sistema perfetto minore} (\emph{systema téleion élatton}) è
+costituito da tre tetracordi congiunti più una nota aggiunta al grave
+(\emph{proslambanómenos}); il \emph{sistema perfetto maggiore} (\emph{systema
+téleion méizon}) da quattro tetracordi congiunti a due a due con un intervallo
+di un tono di disgiunzione al centro, più una nota aggiunta al grave
+(\emph{proslambanómenos}); il \emph{sistema perfetto immutabile} (\emph{systema
+téleion ametábolon}) dalla combinazione dei due sistemi perfetti minore e
+maggiore in un'unica successione.
+
+Con il sistema perfetto si era tentato di organizzare unitariamente lo spazio
+musicale intorno ad un centro \emph{la}, riferendosi ad un'ottava \emph{mi--mi}
+di struttura dorica che con l'aggiunta di due tetracordi, uno superiore e uno inferiore, permetteva
+l'intero sistema perfetto di articolarsi su due ottave la'-La.
+
+\newpage
+
+\textit{Sistema perfetto immutabile, comprendente i sistemi perfetto maggiore
+e minore}: dalla \emph{mése} si dipartono il collegamento \emph{disgiunto}
+(verso il tetracordo \emph{diezeugménon} e oltre, sistema perfetto maggiore) e
+quello \emph{congiunto} (tetracordo \emph{synemménon}, sistema perfetto
+minore).
+
+
+\begin{figure}[htbp]
+\centering
+% =====================================================================
+% Ricostruzione fedele della tavola "Sistema perfetto immutabile" (scan p. 45).
+% La scala maggiore occupa la colonna centrale, dall'acuto (la', y=14) al grave
+% (La, y=0). A sinistra le quattro parentesi dei tetracordi del sistema
+% maggiore; a destra il ramo congiunto (sistema minore, tetracordo synemménon)
+% con le tre parentesi corrispondenti. Tra ciascuna coppia di note è indicato
+% l'intervallo (tono / semitono). La linea tratteggiata sib--si' segna il punto
+% di biforcazione (mése = la) tra collegamento disgiunto e congiunto.
+% Coordinate: 1 unità y = 1 grado della scala.
+% =====================================================================
+\resizebox{0.95\textwidth}{!}{%
+\begin{tikzpicture}[
+    x=1cm, y=0.62cm,
+    nota/.style={font=\small},
+    greco/.style={font=\scriptsize\itshape},
+    iv/.style={font=\tiny},
+    tet/.style={font=\scriptsize},
+    titolo/.style={font=\small\itshape}
+  ]
+
+  % ==================================================================
+  % Ordine orizzontale (sx -> dx):
+  %   parentesi+nome tetracordo | nome greco corda | (intervallo) | NOTA (centro x=0)
+  % Le note stanno al centro (x=0); intervalli incolonnati a metà altezza
+  % subito a sinistra; nomi greci ancora più a sinistra; tetracordi all'estrema sx.
+  % ==================================================================
+  \def\xnota{0}      % colonna centrale delle note
+  \def\xiv{0}        % intervalli (tono/semitono), incolonnati con le note
+  \def\xgreco{-1.3}  % nomi greci delle corde
+  \def\xtet{-6.2}    % parentesi + etichetta tetracordo
+
+  % --- NOTE colonna centrale (tutte, acuto in alto) ---
+  \foreach \y/\n in {%
+      14/{la$'$}, 13/{sol$'$}, 12/{fa$'$}, 11/{mi$'$}, 10/{re$'$},
+       9/{do$'$}, 8/{si$'$}, 7/{la}, 6/{sol}, 5/{fa}, 4/{mi},
+       3/{re}, 2/{do}, 1/{Si}, 0/{La}}{
+    \node[nota,anchor=center] at (\xnota,\y) {\n};
+  }
+  % --- Nomi greci PARTE ALTA (la'..si', maggiore) — a SINISTRA delle note ---
+  \foreach \y/\g in {%
+      14/{Néte Hyperbolayôn},
+      13/{Paranéte \textquotedbl},
+      12/{Trite \textquotedbl},
+      11/{Néte Diezeugménon},
+      10/{Paranéte \textquotedbl},
+       9/{Trite \textquotedbl},
+       8/{Paramése}}{
+    \node[greco,anchor=east] at (\xgreco,\y) {\g};
+  }
+  % nota esplicativa accanto a Paramése (a sinistra)
+  \node[iv,anchor=east] at (\xgreco,7.55) {(Diezeuxis o spezzatura)};
+
+  % --- INTERVALLI maggiore, incolonnati tra una nota e l'altra ---
+  \foreach \y/\iv in {%
+      13.5/{(tono)}, 12.5/{(tono)}, 11.5/{(semitono)},
+      10.5/{(tono)},  9.5/{(tono)},  8.5/{(semitono)},
+       7.5/{(tono)},  6.5/{(tono)},  5.5/{(tono)},
+       4.5/{(semitono)},3.5/{(tono)}, 2.5/{(tono)},
+       1.5/{(semitono)},0.5/{(tono)}}{
+    \node[iv,anchor=center] at (\xiv,\y) {\iv};
+  }
+
+  % --- PARENTESI TETRACORDI (estrema sinistra) ---
+  % #5 = spostamento orizzontale della SOLA parentesi (testo resta fermo a \xtet)
+  % Parentesi a graffa: spina verticale + alette diagonali a 45 gradi verso le note.
+  \newcommand{\tetraSX}[5]{% #1=ybasso #2=yalto #3=qualifica #4=sottotitolo #5=dx
+    \draw ({\xtet+1.0+#5},{#1+0.0}) -- ({\xtet+0.8+#5},{#1+0.2})
+       -- ({\xtet+0.8+#5},{#2-0.2}) -- ({\xtet+1.0+#5},{#2+0.0});
+    \node[tet,anchor=west,align=left] at (\xtet,{(#1+#2)/2})
+      {Tetracordo\\[-1pt]#3\\[-1pt]\scriptsize(#4)};
+  }
+  \tetraSX{11}{14}{estremo}{Hyperbolaiôn}{1.5}
+  \tetraSX{8}{11}{disgiunto}{Diezeugménon}{1.5}
+  \tetraSX{4}{7}{di mezzo}{Mesôn}{4.75}
+  \tetraSX{0}{4}{più alto}{Hypatôn}{4.75}
+
+  % ==================================================================
+  % RAMO CONGIUNTO — sistema perfetto minore (colonna destra)
+  % stesso ordine speculare: (intervallo) | NOTA | nome greco | parentesi
+  % ==================================================================
+  \def\xm{2.0}          % colonna note minore
+  \pgfmathsetmacro{\xmiv}{\xm}         % intervalli minore, incolonnati con le note
+  \pgfmathsetmacro{\xmgreco}{\xm+1} % nomi greci minore (a dx)
+  % note + greci del tetracordo synemménon (la=Mése è la base, nome già nel tronco)
+  \foreach \y/\n/\g in {%
+      10/{re$'$}/{Néte Synemménon},
+       9/{do$'$}/{Paranéte \textquotedbl},
+       8/{si$\flat$}/{Trite \textquotedbl}}{
+    \node[nota,anchor=center] at (\xm,\y)      {\n};
+    \node[greco,anchor=west]  at (\xmgreco,\y) {\g};
+  }
+  \foreach \y/\iv in {9.5/{(tono)}, 8.5/{(tono)}}{
+    \node[iv,anchor=center] at (\xmiv,\y) {\iv};
+  }
+  % --- Nomi greci PARTE BASSA (tronco comune, la=Mése .. La) — a DESTRA delle note ---
+  \foreach \y/\g in {%
+       7/{Mése},
+       6/{Lìchanos Mesôn},
+       5/{Parhypàte Mesôn},
+       4/{Hypàte Mesôn},
+       3/{Lìchanos Hypatôn},
+       2/{Parhypàte Hypatôn},
+       1/{Hypàte Hypatôn},
+       0/{Proslambanómenos}}{
+    \node[greco,anchor=west] at (3,\y) {\g};
+  }
+  % linea tratteggiata di congiunzione fra le due colonne (si' / sib, y=8)
+  \draw[dashed] (0.55,7) -- ({\xm-0.55},7.8);
+
+  % parentesi tetracordi lato destro (minore) — graffa con alette a 45 gradi
+  % #4 = spostamento orizzontale della SOLA parentesi (testo resta fermo)
+  \pgfmathsetmacro{\xtetdx}{\xm+3.1}
+  \newcommand{\tetraDX}[4]{% #1=ybasso #2=yalto #3=sottotitolo #4=dx
+    \draw ({\xtetdx-0.2+#4},{#1+0.0}) -- ({\xtetdx+#4},{#1+0.2})
+       -- ({\xtetdx+#4},{#2-0.2}) -- ({\xtetdx-0.2+#4},{#2+0.0});
+    \node[tet,anchor=west,align=left] at ({\xtetdx+0.5},{(#1+#2)/2})
+      {Tetracordo\\[-1pt]congiunto\\[-1pt]\scriptsize(#3)};
+  }
+  \tetraDX{7}{10}{Synemménon}{.5}
+
+  % --- Intestazioni colonne ---
+  \node[titolo,anchor=east] at (\xgreco,14.9) {\underline{Maggiore}};
+  \node[titolo] at (\xmgreco,10.9) {\underline{Minore}};
+
+\end{tikzpicture}}
+\end{figure}
+
+Il fatto che il nome delle singole note, nei vari collegamenti di tetracordi,
+sia relato al nome delle corde della \emph{Kithara} o della \emph{Lira}
+farebbe pensare al sistema perfetto non tanto come schema teorico, ma
+piuttosto come ordinamento di tipo pratico-esecutivo.
+
+\newpage
+
 
 \subsection{Nome delle corde della \emph{Lira} rispetto alle note nel
             collegamento di due tetracordi}
-% TODO trascrivere
+
+Quando i tetracordi sono congiunti abbiamo:
+
+% Tetracordi congiunti: condividono il "la" (fondamentale del primo = Mése del
+% secondo). Le due graffe abbracciano range sovrapposti (re-la e la-mi) e si
+% incrociano sulla riga del "la".
+\begin{center}
+\begin{tikzpicture}[
+    x=1cm, y=0.6cm,
+    nota/.style={font=\normalsize},
+    nome/.style={font=\normalsize,anchor=west},
+    graf/.style={thick}
+  ]
+  % --- note (acuto in alto), una per riga ---
+  \foreach \y/\n in {6/{re}, 5/{do}, 4/{si$\flat$}, 3/{la}, 2/{sol}, 1/{fa}, 0/{mi}}{
+    \node[nota,anchor=center] at (0,\y) {\n};
+  }
+  % --- nomi delle corde a destra ---
+  \foreach \y/\g in {%
+      6/{Néte (la corda più in basso, in realtà il suono più acuto)},
+      5/{Paranéte (successiva alla Néte)},
+      4/{Trite (terza corda)},
+      3/{Mése (corda media)},
+      2/{Lìchanos (corda del primo dito)},
+      1/{Parhypàte (successiva alla più alta)},
+      0/{Hypàte (la corda più in alto, in realtà il suono più grave)}}{
+    \node[nome] at (0.45,\y) {\g};
+  }
+  % --- graffe a SINISTRA delle note, alette a 45 gradi verso le note ---
+  % graffa 1: primo tetracordo re-do-sib-la (righe 6..3) — spina interna
+  \draw[graf] (-0.3,6.0) -- (-0.5,5.8) -- (-0.5,3.2) -- (-0.3,3.0);
+  % graffa 2: secondo tetracordo la-sol-fa-mi (righe 3..0) — spina esterna
+  \draw[graf] (-0.3,3.0) -- (-0.5,2.8) -- (-0.5,0.2) -- (-0.3,0.0);
+\end{tikzpicture}
+\end{center}
+
+Nel collegamento tra due tetracordi disgiunti:
+
+\begin{center}
+\begin{tabular}{@{}l@{}}
+$\left.\begin{array}{@{}l@{}} \text{mi}' \\ \text{re}' \\ \text{do}' \\ \text{si} \end{array}\right\}\;
+\begin{array}{@{}l@{}}
+  \text{Néte} \\ \text{Paranéte} \\ \text{Trite} \\
+  \text{Paramése (successiva alla Mése)}
+\end{array}$ \\[1.4\baselineskip]
+$\left.\begin{array}{@{}l@{}} \text{la} \\ \text{sol} \\ \text{fa} \\ \text{mi} \end{array}\right\}\;
+\begin{array}{@{}l@{}}
+  \text{Mése} \\ \text{Lìchanos} \\ \text{Parhypàte} \\ \text{Hypàte}
+\end{array}$ \\
+\end{tabular}
+\end{center}
+
+Con \emph{corda più in alto} e \emph{più in basso} ci si riferiva
+probabilmente alla posizione delle corde sullo strumento rispetto alla
+posizione di esecuzione.
+
+\newpage
 
 \subsection{Specie di ottava}
-% TODO trascrivere
+
+Rispetto al sistema perfetto maggiore si possono formare una serie di
+strutture intervallari nell'ambito di un'ottava chiamate \emph{specie di
+ottava}. Esse sono sette ed iniziano ciascuna un tono o un semitono più basso
+a partire dall'ottava più acuta la'--la, e procedono dall'acuto al grave.
+
+\begin{center}\small
+\begin{tabular}{c c l @{\qquad\qquad} *{7}{c}}
+  \multicolumn{3}{l}{\textbf{Specie di ottava}}
+    & \multicolumn{7}{l}{\textbf{Struttura intervallare}} \\[4pt]
+  la$'$ & la & Ipodorica  & T & T & S & T & T & S & T \\
+  sol$'$ & sol & Ipofrigia & T & S & T & T & S & T & T \\
+  fa$'$ & fa & Ipolidia   & S & T & T & S & T & T & T \\
+  mi$'$ & mi & Dorica     & T & T & S & T & T & T & S \\
+  re$'$ & re & Frigia     & T & S & T & T & T & S & T \\
+  do$'$ & do & Lidia      & S & T & T & T & S & T & T \\
+  si$'$ & Si & Misolidia  & T & T & T & S & T & T & S \\
+\end{tabular}
+\end{center}
+
+Le differenti strutture intervallari conferiscono ad ognuna delle specie un
+proprio carattere musicale, mentre il nome di ciascuna di esse deriva
+probabilmente da quello di alcune tribù, come appunto gli Eoli, gli Iasti, i
+Locri, i Frigi.
+
+Le specie di ottava riportate sopra sono state considerate unicamente in base
+al genere diatonico (tono (T), tono (T) e semitono (S)), ma naturalmente esse
+potevano essere costruite anche nel genere cromatico ed enarmonico.
 
 \section{Sistema naturale}
 % TODO trascrivere

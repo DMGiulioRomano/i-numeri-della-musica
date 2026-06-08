@@ -53,7 +53,9 @@
 \newlist{elenco}{enumerate}{1}
 \setlist[elenco]{label=\arabic*), leftmargin=*, itemsep=2pt, topsep=4pt}
 \RequirePackage{booktabs}
+\RequirePackage{longtable}
 \RequirePackage{array}
+\RequirePackage{multirow}
 
 % ----------------------------- Figure --------------------------------
 \RequirePackage{graphicx}
@@ -91,14 +93,14 @@
 % Capitolo: "N. Titolo" in neretto, allineato a sinistra, con stacco.
 \titleformat{\chapter}[block]
   {\normalfont\Large\bfseries}{\thechapter.}{0.6em}{}
-\titlespacing*{\chapter}{0pt}{12pt}{40pt}
+\titlespacing*{\chapter}{0pt}{12pt}{52pt}
 % Sezioni e sottosezioni in neretto, numerate (1.1, 1.1.1).
 \titleformat{\section}
   {\normalfont\large\bfseries}{\thesection}{0.6em}{}
-\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titlespacing*{\section}{0pt}{18pt}{10pt}
 \titleformat{\subsection}
   {\normalfont\normalsize\bfseries}{\thesubsection}{0.6em}{}
-\titlespacing*{\subsection}{0pt}{12pt}{4pt}
+\titlespacing*{\subsection}{0pt}{16pt}{8pt}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 
