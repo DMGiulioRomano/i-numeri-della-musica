@@ -1569,15 +1569,15 @@ essendo primo, ha una identità in grado di generare rapporti le cui altezze son
 distinte). Quindi l'insieme intervallare nell'ambito dell'ottava è composto,
 oltre che da, ovviamente, $1/1$, dai seguenti rapporti base:
 \[
-  \tfrac{3}{2}\ \ \tfrac{5}{4}\ \ \tfrac{5}{3}\ \ \tfrac{7}{6}\ \ \tfrac{7}{5}\ \
-  \tfrac{7}{4}\ \ \tfrac{9}{8}\ \ \tfrac{9}{7}\ \ \tfrac{9}{5}\ \
-  \tfrac{11}{10}\ \ \tfrac{11}{9}\ \ \tfrac{11}{8}\ \ \tfrac{11}{7}\ \ \tfrac{11}{6}
+  \tfrac{3}{2};\ \ \tfrac{5}{4};\ \ \tfrac{5}{3};\ \ \tfrac{7}{6};\ \ \tfrac{7}{5};\ \
+  \tfrac{7}{4};\ \ \tfrac{9}{8};\ \ \tfrac{9}{7};\ \ \tfrac{9}{5};\ \
+  \tfrac{11}{10};\ \ \tfrac{11}{9};\ \ \tfrac{11}{8};\ \ \tfrac{11}{7};\ \ \tfrac{11}{6};
 \]
 e dai loro rispettivi complementari:
 \[
-  \tfrac{4}{3}\ \ \tfrac{8}{5}\ \ \tfrac{6}{5}\ \ \tfrac{12}{7}\ \ \tfrac{10}{7}\ \
-  \tfrac{8}{7}\ \ \tfrac{16}{9}\ \ \tfrac{14}{9}\ \ \tfrac{10}{9}\ \
-  \tfrac{20}{11}\ \ \tfrac{18}{11}\ \ \tfrac{16}{11}\ \ \tfrac{14}{11}\ \ \tfrac{12}{11}
+  \tfrac{4}{3};\ \ \tfrac{8}{5};\ \ \tfrac{6}{5};\ \ \tfrac{12}{7};\ \ \tfrac{10}{7};\ \
+  \tfrac{8}{7};\ \ \tfrac{16}{9};\ \ \tfrac{14}{9};\ \ \tfrac{10}{9};\ \
+  \tfrac{20}{11};\ \ \tfrac{18}{11};\ \ \tfrac{16}{11};\ \ \tfrac{14}{11};\ \ \tfrac{12}{11};
 \]
 Disponendo i 29 rapporti in ordine crescente si otterrà una scala così formata
 (nella colonna ``cents'' è riportato l'intervallo che separa ciascun grado dal
@@ -1800,18 +1800,20 @@ sesta maggiore non è altro che l'intervallo complementare della terza minore).
 Questi sei intervalli, più la tonica, costituiscono i rapporti base generatori
 delle sette serie di quinte necessarie a formare 53 intervalli ineguali
 nell'ambito dell'ottava:
+\begin{itemize}
+  \item \medskip\noindent serie base, pitagorica, poggiante su $1/1$;
+  \item tre serie derivanti dagli intervalli di terza minore:
+\[
+  \frac{6}{5}; \ \ \left(\frac{6}{5}\right)^{2}=\frac{36}{25}; \ \
+  \left(\frac{6}{5}\right)^{3}=\frac{216}{125};
+\]
+\item tre serie derivanti dagli intervalli di sesta maggiore:
+\[
+  \frac{5}{3}=\frac{5}{6}; \ \ \left(\frac{5}{6}\right)^{2}=\frac{25}{18}; \ \
+  \left(\frac{5}{6}\right)^{3}=\frac{125}{216}=\frac{125}{108};
+\]
 
-\medskip\noindent serie base, pitagorica, poggiante su $1/1$;\\
-tre serie derivanti dagli intervalli di terza minore:
-\[
-  \frac{6}{5} \;-\; \left(\frac{6}{5}\right)^{2}=\frac{36}{25} \;-\;
-  \left(\frac{6}{5}\right)^{3}=\frac{216}{125} \;-
-\]
-tre serie derivanti dagli intervalli di sesta maggiore:
-\[
-  \frac{5}{3} \;-\; \frac{5}{6}=\left(\frac{5}{6}\right)^{2}=\frac{25}{18} \;-\;
-  \left(\frac{5}{6}\right)^{3}=\frac{125}{216}=\frac{125}{108} \;-
-\]
+\end{itemize}
 
 La formula di generazione degli intervalli di ogni serie è la seguente:
 \[
@@ -1825,9 +1827,8 @@ riduzione nell'ottava. Quindi, per ricavare gli intervalli successivi
 ascendenti e discendenti dato l'intervallo base, bisogna semplicemente
 moltiplicare o dividere quest'ultimo per $3/2$:
 \begin{align*}
-  \frac{6}{5}\times\frac{3}{2} &= \frac{18}{10} = \frac{9}{5}; &
-  \frac{9}{5}\times\frac{3}{2} &= \frac{27}{20}\ \text{ecc.} \\[4pt]
-  \frac{6}{5}\times\frac{4}{3} &= \frac{24}{15} = \frac{8}{5}\ \text{ecc.}
+  \frac{6}{5}\times\frac{3}{2} &= \frac{18}{10} = \frac{9}{5}\times\frac{3}{2}= \frac{27}{20}\ \ \text{ecc.} \\[4pt]
+  \frac{6}{5}\times\frac{4}{3} &= \frac{24}{15} = \frac{8}{5}\ \ \text{ecc.}
 \end{align*}
 oppure:
 \begin{align*}
@@ -1923,7 +1924,7 @@ rispettivamente da quattro quinte discendenti e quattro ascendenti:
   \foreach \i/\n/\d in {1/512/375, 2/128/125, 3/192/125, 4/144/125}{
     \node at (\i,0) {$\frac{\n}{\d}$};}
   \node[base] at (0,0) {$\frac{216}{125}$};
-  \draw[->] (4.45,-0.55) -- (0.55,-0.55);
+  \draw[->] (4.45,0.55) -- (0.55,0.55);
 \end{tikzpicture}
 \end{center}
 
