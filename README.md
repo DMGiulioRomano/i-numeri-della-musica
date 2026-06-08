@@ -23,7 +23,7 @@ era in fondo).
 │   ├── 01-elementi-calcolo-intervalli.tex  # COMPLETO (§1.1–§1.3.3)
 │   └── 02-sistemi-intonazione.tex   # COMPLETO (§2.1–§2.8)
 ├── appendici/
-│   └── appendici.tex        # Appendice 1-5 (scheletro)
+│   └── appendici.tex        # App. 1,2,4,5 COMPLETE; App. 3 da fare
 ├── glossario.tex            # voci finali + tabella proporzioni; inizio da fare
 ├── esempi/                  # esempi musicali (LilyPond -> PDF ritagliato)
 │   ├── _global.ily          # impostazioni condivise
@@ -66,8 +66,12 @@ colmatura delle distanze, tabella dei 43 intervalli, intervalli epimori) e
 **§2.8** (sistema armonico di Alain Daniélou: sette serie di quinte generatrici
 con diagrammi TikZ, tabella dei 53 intervalli, intervalli regolatori).
 
-Da fare: Appendici, completamento Glossario, rifinitura bibliografia. I punti
-aperti sono marcati con `% TODO` nei sorgenti.
+**Appendici**: complete la 1 (serie degli armonici), la 2 (temperamento
+equabile), la 4 (potenze di 2 e di 3) e la 5 (numeri primi inferiori a 3000).
+
+Da fare: Appendice 3 (tabella dei 140 intervalli naturali nel rapporto 2/1),
+voci iniziali del Glossario (A–R), rifinitura bibliografia. I punti aperti sono
+marcati con `% TODO` nei sorgenti.
 
 ## Note
 
