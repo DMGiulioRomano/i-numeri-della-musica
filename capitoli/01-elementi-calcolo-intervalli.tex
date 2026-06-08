@@ -154,7 +154,7 @@ solo in quello naturale:
     = \frac{9}{4} \times \frac{1}{2} = \frac{9}{8}
 \]
 \[
-  \text{tono piccolo} = \frac{10}{9} = O - T - 2Q = \frac{2}{1} \times
+  \text{tono piccolo} = \frac{10}{9} = O + T - 2Q = \frac{2}{1} \times
     \frac{5}{4} \times \frac{4}{9} = \frac{40}{36} = \frac{10}{9}
 \]
 \[
@@ -332,7 +332,7 @@ calcolati facilmente essendo essi tutti multipli del $\log$ dell'intervallo più
 piccolo: $\log 1{,}0594630943 = 0{,}025085833$, quindi $\text{DO} = 0$,
 $\text{DO}\sharp = 0{,}025085833$, $\text{RE} = 0{,}050171666$,
 $\text{RE}\sharp = 0{,}075257499$ e così via fino all'ottava
-$\text{DO} = 0{,}301029957$.
+$\text{DO'} = 0{,}301029957$.
 
 L'unico inconveniente in questo sistema di calcolo è rappresentato dal fatto di
 dover impiegare numeri così ingombranti. Tuttavia questa difficoltà può essere
@@ -356,14 +356,14 @@ prevedere misurazioni agevolmente fino ad $1/100$ di semitono.
 
 Leonardo Eulero [1707--1783] già utilizzava i logaritmi per la definizione della
 grandezza degli intervalli, presentati sotto forma di rapporti matematici tra le
-loro rispettive frequenze $(f/f')$. Considerando l'ottava intervallo musicale
+loro rispettive frequenze $(i/i')$. Considerando l'ottava intervallo musicale
 fondamentale, Eulero inizialmente utilizzò logaritmi decimali, sostituendoli poi
 con quelli a base 2, attribuendo così all'ottava la cifra $1$. Nel 1834 F. W.
 Opitz combinò il concetto di Eulero dell'ottava come intervallo di base con
 l'idea di Savart dell'estensione fino a $1000$, suggerendo di calcolare i
 rapporti di frequenza secondo la formula:
 \[
-  x = 1000 \log I/i
+  x = 1000 \log_2 i/i'
 \]
 
 Questa formula venne adottata anche da Arthur Joachim von Oettingen
@@ -372,11 +372,14 @@ verso un ulteriore chiarimento sulla misurazione della trasformazione
 logaritmica venne compiuto da Baron Riche de Prony, il quale utilizzò come unità
 operativa il mezzo tono temperato:
 \[
-  x = \frac{12}{\log 2} \times \log I/i
+  x = \frac{12}{\log 2} \times \log i/i'
 \]
 Questa formula venne elaborata poi da Gottfried Heinrich Bellermann
 [1832--1908], il quale propose $100$ come unità di misura per il mezzo tono
-temperato al posto di $1$.
+temperato al posto di $1$\footnote{Il calcolo della radice n-esima di un numero 
+$\sqrt[n]{a}$ si effettua con: $\frac{1}{a^n}$. Per esempio, nel caso di $\sqrt[12]{2}$
+si procederà nel dividere 1 per l'indice del radicale: $1/12 = 0{,}08\overline{3 }$ \ldots
+quindi si eleverà il radicando 2 per il risultato ottenuto: $2^{0{,}08\overline{3}} = 1{,}059463094\ldots$}.
 
 % =====================================================================
 \section{Conversione rapporto/cents/rapporto}
@@ -434,10 +437,10 @@ quindi si dovrà trovare il logaritmo del quoziente così ottenuto:
 ed infine il logaritmo del rapporto va moltiplicato per il fattore di
 conversione di Ellis:
 \[
-  0{,}1761 \times \frac{1200}{\log 2} = 0{,}1761 \times 3986{,}313714\ldots
+  0{,}1761 \times (\frac{1200}{\log 2} = 0{,}1761 \times 3986{,}313714\ldots)
   = 702~\text{cents}\footnote{Tutti i valori in cents sono approssimati.}
 \]
-La stessa conversione in savarts risulterà come:
+La stessa conversione in \textit{savarts} risulterà come:
 \[
   3:2 = 1{,}5 \qquad \log 1{,}5 = 0{,}1761 \times 1000 = 176~\text{savarts}
 \]
